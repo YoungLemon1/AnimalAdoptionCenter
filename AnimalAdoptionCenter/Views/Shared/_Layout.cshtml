@@ -11,7 +11,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/StyleSheet.css" />
 </head>
-<body>
+<body class="templateBody">
 	<header>
 		<nav class="navbar">
 			<ul>
@@ -20,6 +20,8 @@
 			</ul>
 		</nav>
 	</header>
-	@RenderBody()
+	<div class="mainContentWrapper">
+		@RenderBody()
+	</div>
 </body>
 </html>

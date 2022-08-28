@@ -1,4 +1,11 @@
-﻿
+﻿.templateBody {
+    margin: 0px;
+}
+
+.mainContentWrapper {
+    margin: 30px
+}
+
 .navbar {
     list-style: none;
     background-color: black;
