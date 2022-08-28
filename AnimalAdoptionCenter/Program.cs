@@ -5,7 +5,9 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapDefaultControllerRoute();
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Catalog}/{action=Index}/{id?}"); ;
 });
 
 app.Run();
