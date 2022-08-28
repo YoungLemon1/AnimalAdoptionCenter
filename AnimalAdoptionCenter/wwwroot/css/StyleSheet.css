@@ -3,12 +3,19 @@
 }
 
 .mainContentWrapper {
-    margin: 30px
+    margin-top: 10px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
 }
 
 .navbar {
     list-style: none;
     background-color: black;
+}
+
+nav ul {
+    margin: 0px;
 }
 
 nav li {
