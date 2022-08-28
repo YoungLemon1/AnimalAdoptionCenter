@@ -12,18 +12,18 @@
 	<link rel="stylesheet" href="css/StyleSheet.css" />
 </head>
 <body>
-	<div style="background-color:palegreen">
+@*	<div style="background-color:palegreen">
 		<button>Home Page</button>
 		<button>Catalogue</button>
-	</div>
-	@*<header>
+	</div>*@
+	<header>
 		<nav>
 			<ul>
-				<li><a href="Home/index.cshtml">Home</a></li>
-				<li><a href="Catalog/index.cshtml">Catalog</a></li>
+				<li><a asp-action="index" asp-controller="Home">Home</a></li>
+				<li><a asp-action="index" asp-controller="Catalog">Catalog</a></li>
 			</ul>
 		</nav>
-	</header>*@
+	</header>
 	<hr />
 	@RenderBody()
 </body>
