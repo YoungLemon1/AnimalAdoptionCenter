@@ -1,9 +1,30 @@
 ﻿@{
-    ViewBag.Title = "_Layout";
+	ViewBag.Title = "_Layout";
 }
-<div style="background-color:palegreen">
-    <button>Home Page</button>
-    <button>Catalogue</button>
-</div>
-<hr/>
-@RenderBody()
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/StyleSheet.css" />
+</head>
+<body>
+@*	<div style="background-color:palegreen">
+		<button>Home Page</button>
+		<button>Catalogue</button>
+	</div>*@
+	<header>
+		<nav>
+			<ul>
+				<li><a asp-action="index" asp-controller="Home">Home</a></li>
+				<li><a asp-action="index" asp-controller="Catalog">Catalog</a></li>
+			</ul>
+		</nav>
+	</header>
+	<hr />
+	@RenderBody()
+</body>
+</html>
