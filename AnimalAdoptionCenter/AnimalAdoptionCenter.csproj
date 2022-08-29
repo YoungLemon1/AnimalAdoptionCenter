@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\javascript\**" />
+    <Content Remove="wwwroot\javascript\**" />
+    <EmbeddedResource Remove="wwwroot\javascript\**" />
+    <None Remove="wwwroot\javascript\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Images\Cat1.jpg" />
     <None Remove="Images\Dog1.jpg" />
   </ItemGroup>
@@ -33,7 +40,6 @@
   <ItemGroup>
     <Folder Include="Repositories\" />
     <Folder Include="Services\General Services\" />
-    <Folder Include="wwwroot\javascript\" />
   </ItemGroup>
 
   <ItemGroup>
