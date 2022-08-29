@@ -1,6 +1,6 @@
 ﻿namespace AnimalAdoptionCenter.Models.Enums
 {
-    public enum Sex
+    public enum eSex
     {
         Male,
         Female
