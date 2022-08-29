@@ -1,7 +1,19 @@
-﻿
+﻿@model AnimalAdoptionCenter.Models.Animal
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<header>
+    <h1>@Model.Name's Profile</h1> <br />
+</header>
+<div>
+    <div>
+        <img src="@Model.ProfileImagePath" /> <br />
+    </div>
+    <div>
+        <p>@Model.Age</p>
+        <p>@Model.AnimalSize</p>
+        <p>@Model.AnimalSex</p>
+        <p>@Model.Breed</p>
+    </div>
+</div>
 

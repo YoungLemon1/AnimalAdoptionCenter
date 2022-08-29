@@ -15,6 +15,7 @@ namespace AnimalAdoptionCenter.Services
             {
                 new Animal
                 {
+                    AnimalId = 1,
                     Name = "bob",
                     Age = 3,
                     Breed = "Dalmaty",
@@ -24,6 +25,7 @@ namespace AnimalAdoptionCenter.Services
                 },
                 new Animal
                 {
+                    AnimalId = 2,
                     Name = "dan",
                     Age = 4,
                     Breed = "dani",
