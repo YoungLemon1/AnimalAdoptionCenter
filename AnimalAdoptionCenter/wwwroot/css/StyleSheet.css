@@ -1,11 +1,38 @@
-﻿.PopularAnimals img
-{
-    width : 300px;
-    height : 200px; 
+﻿.templateBody {
+    margin: 0px;
 }
 
-.Toolbar 
-{
-    background-color:palegreen;
-    height : 40px;
+.mainContentWrapper {
+    margin-top: 10px;
+}
+
+.navbar {
+    list-style: none;
+    background-color: black;
+}
+
+nav ul {
+    margin: 0px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size:large;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.popularAnimals header {
+
+}
+
+.popularAnimals img {
+    width: 300px;
+    height: 200px;
 }

@@ -11,16 +11,17 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/StyleSheet.css" />
 </head>
-<body>
+<body class="templateBody">
 	<header>
-		<nav>
+		<nav class="navbar">
 			<ul>
-				<li><a asp-action="index" asp-controller="Home">Home</a></li>
-				<li><a asp-action="index" asp-controller="Catalog">Catalog</a></li>
+				<li ><a asp-action="index" asp-controller="Home">Home</a></li>
+				<li ><a asp-action="index" asp-controller="Catalog">Catalog</a></li>
 			</ul>
 		</nav>
 	</header>
-	<hr />
-	@RenderBody()
+	<div class="mainContentWrapper">
+		@RenderBody()
+	</div>
 </body>
 </html>
