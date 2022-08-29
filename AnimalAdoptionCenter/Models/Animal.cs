@@ -6,12 +6,14 @@ namespace AnimalAdoptionCenter.Models
     {
         public int AnimalId { get; set; }
         public int CategoryId { get; set; }
-        public Category ?AnimalCategory { get; set; }
-        public string ?Breed { get; set; }
+        public string? Name { get; set; }
+        public string? ProfileImagePath { get; set; }
+        public Category? AnimalCategory { get; set; }
+        public string? Breed { get; set; }
         public int Age { get; set; }
         public int CityId { get; set; }
-        public string ?Description { get; set; }
-        public City ?OriginlCity { get; set; }
+        public string? Description { get; set; }
+        public City? OriginlCity { get; set; }
         public Sex AnimalSex { get; set; }
         public Status AnimalStatus { get; set; }
         public Size AnimalSize { get; set; }

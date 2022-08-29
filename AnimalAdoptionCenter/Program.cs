@@ -1,11 +1,14 @@
+using AnimalAdoptionCenter.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<ITempDataReposService, TempDataReposService>();
 var app = builder.Build();
 
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseStaticFiles();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
