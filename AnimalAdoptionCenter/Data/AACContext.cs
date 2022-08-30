@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AnimalAdoptionCenter.Data
 {
-    public class AnimalAdoptionCenterContext : DbContext
+    public class AACContext : DbContext
     {
-        public AnimalAdoptionCenterContext(DbContextOptions<AnimalAdoptionCenterContext> options) : base(options)
+        public AACContext(DbContextOptions<AACContext> options) : base(options)
         {
         }
         public DbSet<Animal>? Animals { get; set; }

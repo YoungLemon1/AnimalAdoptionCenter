@@ -27,6 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Services\Repositories\DataRepository.cs" />
+    <Compile Include="Services\Repositories\IRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Images\Cat1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
