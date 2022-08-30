@@ -10,7 +10,7 @@ namespace AnimalAdoptionCenter.Controllers
         public ProfileController(ITempDataReposService tempDataReposService) => _tempDataReposService = tempDataReposService;
         public IActionResult Index(int id)
         {
-            Animal animal = _tempDataReposService.GetAllAnimals().Where(animal => animal.AnimalId == id).First();
+            Animal animal = _tempDataReposService.GetAllAnimals().Single(animal => animal.AnimalId == id);
             return View(animal);
         }
     }

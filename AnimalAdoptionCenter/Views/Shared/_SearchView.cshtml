@@ -1,0 +1,23 @@
+﻿@inject AnimalAdoptionCenter.Services.GeneralServices.ISearchService service
+<div>
+    <input type="text" placeholder="Search..." value="@service.SearchText" />
+</div>
+<nav style="visibility:collapse">
+    <ul>
+        @{
+            foreach(var animal in service.GetProfilesByAge(service.SearchText))
+            {
+                <li>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="@animal.ProfileImagePath" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">
+                                @animal.Name
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</nav>

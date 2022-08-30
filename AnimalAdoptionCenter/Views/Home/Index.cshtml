@@ -1,4 +1,6 @@
-﻿
+﻿@{
+    ViewBag.Title = "Home";
+}
 <!DOCTYPE html>
 
 <html>
@@ -11,9 +13,7 @@
     <h1>Home Page</h1>
     <hr/>
     @*Search-Bar*@
-    <div>
-        <input type="text" placeholder="Search..."/>
-    </div>
+    @await Html.PartialAsync("_SearchView")
     <hr/>
     @*Popular animlals*@
     <div class="popularAnimals">
@@ -23,11 +23,7 @@
     </div>
     <hr/>
     @*Categories*@
-    <div>
-        <button>Dogs</button>
-        <button>cats</button>
-        <button>Other Animals</button>
-    </div>
+    @await Html.PartialAsync("_HomeCategoriesView")
     <hr/>
     @*About us*@
     <h2>About Us</h2>

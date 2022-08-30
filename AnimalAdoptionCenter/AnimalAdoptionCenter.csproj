@@ -29,13 +29,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\GeneralServices\" />
     <Folder Include="Services\DatabaseServices\" />
     <Folder Include="wwwroot\javascript\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\lib\Cat1.jpg">
+    <Content Update="wwwroot\lib\Pictures\Animals\Cat1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
