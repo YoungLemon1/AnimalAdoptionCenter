@@ -1,4 +1,5 @@
 ﻿using AnimalAdoptionCenter.Models.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AnimalAdoptionCenter.Models
 {

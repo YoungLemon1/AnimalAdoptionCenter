@@ -1,10 +1,10 @@
-using Microsoft.EntityFrameworkCore;
 using AnimalAdoptionCenter.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<AnimalAdoptionCenterContext>(options => options.UseSqlite("Data Source=C:\\temp\\AnimalAdoptionCenterDb.db"));
-//string connectionString = "Server=(localdb)\\AnimalAdoptionCenter;Database=AAC;Trusted_Connection=True";
-//builder.Services.AddDbContext<AnimalAdoptionCenterContext>(options => options.UseSqlServer(connectionString));
+//builder.Services.AddDbContext<AnimalAdoptionCenterContext>(options => options.UseSqlite("Data Source=C:\\temp\\AnimalAdoptionCenterDb.db"));
+string connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
+builder.Services.AddDbContext<AnimalAdoptionCenterContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
@@ -17,6 +17,7 @@ using (var scope = app.Services.CreateScope())
 
 app.UseRouting();
 app.UseStaticFiles();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
