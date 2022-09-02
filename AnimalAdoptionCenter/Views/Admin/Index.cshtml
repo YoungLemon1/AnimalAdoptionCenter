@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Admin</h1>
+        <form  asp-action="Add Animal" asp-controller="Admin" id="newAnimalForm">
+            <div>
+                <h2>Add New Animal</h2>
+            </div>
+            <div>
+                <label for="category">Type</label>
+                <select id="category" name="category" required>
+                    <option hidden selected value=""></option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="turtle">turtle</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="subCategory">Sub-type</label>
+                <input type="text" id="subCategory" name="subCategory">
+            </div>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" min="0" max="99" id="age" name="Age">
+            </div>
+            <div>
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex">
+                    <option hidden selected value=""></option>
+                    <option value="male">M</option>
+                    <option value="female">F</option>
+                </select>
+            </div>
+            <div>
+                <label for="size">Size</label>
+                <select id="size" name="size">
+                    <option hidden selected value=""></option>
+                    <option value="tiny">Tiny</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div>
+                <label id="description-label" for="description">Description</label>
+                <textarea id="description" name="description" cols="40" rows="5"></textarea>
+            </div>
+            <div><button id="form-submmission" type="submit">Add animal</button></div>
+        </form>
+        <hr/>
+        <h2>Move Animal to archive</h2>
+
+</body>
+</html>

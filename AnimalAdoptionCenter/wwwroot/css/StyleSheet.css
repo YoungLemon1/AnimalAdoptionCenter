@@ -13,6 +13,7 @@
 }
 
 nav ul {
+    list-style: none;
     margin: 0px;
 }
 
@@ -20,17 +21,55 @@ nav li {
     display: inline-block;
 }
 
+form ul {
+    list-style: none;
+}
+
+form div {
+    margin: 10px;
+}
 li a {
     display: block;
     color: white;
     text-align: center;
-    font-size:large;
+    font-size: large;
     padding: 8px;
     text-decoration: none;
 }
 
-.popularAnimals header {
+form label {
+    margin-right: 10px;
+    width: 100px;
+    display: inline-block;
+}
 
+textarea {
+    align-self: start;
+}
+
+#description-label {
+    text-align: left;
+    margin-bottom: 8px;
+    display:block;
+}
+
+#form-submmission {
+    align-self:baseline;
+    margin-top: 8px;
+    margin-left: 0px;
+    width:100px;
+    height:40px;
+}
+
+#newAnimalForm {
+    width:max-content;
+    background-color:antiquewhite;
+    border: 4px groove grey;
+    padding: 8px;
+}
+
+.nonBulletedList ul {
+    list-style: none
 }
 
 .popularAnimals img {
