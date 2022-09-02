@@ -18,7 +18,7 @@ namespace AnimalAdoptionCenter.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
-                new { CategoryId = 1, CategoryName = "Dog" },
+                new { CategoryId = 1, CategoryName = "Dog"},
                 new { CategoryId = 2, CategoryName = "Cat" });
         }
     }
