@@ -1,7 +1,4 @@
-﻿@{
-    ViewBag.Title = "Index";
-}
-<head>
+﻿<head>
     <title>Categories</title>
 </head>
 <body>
@@ -27,17 +24,14 @@
                 }
             </select>
         </label>
-        <label for="searchSex"> Gender:
+        <label for="searchSex"> Sex:
             <select name="searchSex" id="searchSex">
-                @{
-                for (int i = 0; i < 2; i++)
-                {
-                     <option value="enumGenderExample"> gender @i </option>
-                }
-            }
+                <option hidden selected value=""></option>
+                <option value="male">M</option>
+                <option value="female">F</option>
             </select>
         </label>
-        <label for="searchAge"> Age:></label>
+        <label for="searchAge"> Age:</label>
         <input type="range" name="searchAge" id="searchAge">
         <input type="search" placeholder="Search.." />
     </div>
