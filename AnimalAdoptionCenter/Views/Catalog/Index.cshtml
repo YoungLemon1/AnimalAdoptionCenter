@@ -8,7 +8,7 @@
     <h1>Catalog:</h1>
     <div>
         <label for="searchBreed"> Breed:
-            <select name="searchBreed">
+            <select name="searchBreed" id="searchBreed">
                 @{
                     for (int i = 0; i < 5; i++)
                     {
@@ -18,7 +18,7 @@
             </select>
         </label>
         <label for="searchSize"> Size:
-            <select name="searchSize">
+            <select name="searchSize" id="searchSize">
                 @{
                     for (int i = 0; i < 4; i++)
                     {
@@ -27,8 +27,8 @@
                 }
             </select>
         </label>
-        <label for="searchGender"> Gender:
-            <select name="searchGender">
+        <label for="searchSex"> Gender:
+            <select name="searchSex" id="searchSex">
                 @{
                 for (int i = 0; i < 2; i++)
                 {
@@ -37,7 +37,8 @@
             }
             </select>
         </label>
-        <input type="range">
+        <label for="searchAge"> Age:></label>
+        <input type="range" name="searchAge" id="searchAge">
         <input type="search" placeholder="Search.." />
     </div>
     <div>
