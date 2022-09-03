@@ -39,7 +39,7 @@ li a {
 
 form label {
     margin-right: 10px;
-    width: 100px;
+    width: 75px;
     display: inline-block;
 }
 
@@ -51,6 +51,25 @@ textarea {
     text-align: left;
     margin-bottom: 8px;
     display:block;
+}
+
+.catalog div {
+    margin: 10px;
+}
+
+.catalog label {
+    margin-right: 10px;
+    width: 75px;
+    display: inline-block;
+}
+
+.animal-profile {
+    width: 15vw;
+    height: 15vw;
+    background-color: aliceblue;
+    border: 4px groove grey;
+    margin: 8px;
+    padding: 8px;
 }
 
 #form-submmission {
