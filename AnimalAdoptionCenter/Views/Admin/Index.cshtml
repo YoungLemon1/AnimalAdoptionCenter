@@ -3,7 +3,7 @@
 </head>
 <body>
     <h1>Admin</h1>
-        <form  asp-action="Add Animal" asp-controller="Admin" id="newAnimalForm">
+        <form asp-action="Add Animal" asp-controller="Admin" id="newAnimalForm">
             <div>
                 <h2>Add New Animal</h2>
             </div>
@@ -16,7 +16,7 @@
                     <option value="bird">Bird</option>
                     <option value="rabbit">Rabbit</option>
                     <option value="hamster">Hamster</option>
-                    <option value="turtle">turtle</option>
+                    <option value="turtle">Turtle</option>
                     <option value="other">Other</option>
                 </select>
             </div>
@@ -50,9 +50,23 @@
                     <option value="large">Large</option>
                 </select>
             </div>
+            <section>
+                <div>
+                    <label for="vaccinated">Vaccinated</label>
+                    <input type="checkbox" id="vaccinated" name="vaccinated">
+                </div>
+                <div>
+                    <label for="trained">Trained</label>
+                    <input type="checkbox" id="trained" name="trained">
+                </div>
+                <div>
+                    <label for="sterilized">Sterilized</label>
+                    <input type="checkbox" id="sterilized" name="sterilized">
+                </div>
+            </section>
             <div>
                 <label id="description-label" for="description">Description</label>
-                <textarea id="description" name="description" cols="40" rows="5"></textarea>
+                <textarea id="description" name="description" cols="40" rows="5" maxlength="250"></textarea>
             </div>
             <div><button id="form-submmission" type="submit">Add animal</button></div>
         </form>

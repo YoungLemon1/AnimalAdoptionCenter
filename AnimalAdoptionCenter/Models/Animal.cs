@@ -21,9 +21,9 @@ namespace AnimalAdoptionCenter.Models
         public eStatus Status { get; set; }
         public eSize Size { get; set; }
         // My changes
-        public bool? IsTrained { get; set; }
         public bool? IsVaccinated { get; set; }
-        public bool? Issterilized { get; set; }
+        public bool? IsSterilized { get; set; }
+        public bool? IsTrained { get; set; }
         public int CustomerId { get; set; }
         public Customer? Customer { get; set; }
         public string? Description { get; set; }
