@@ -66,9 +66,9 @@ namespace AnimalAdoptionCenter.Services
                     Name = "bob",
                     Age = 3,
                     SubCategory = "Dalmaty",
-                    Sex = Models.Enums.eSex.Male,
-                    Size = Models.Enums.eSize.Avarage,
-                    Status = Models.Enums.eStatus.Ready_For_Adoption,
+                    Sex = Models.Enums.Sex.Male,
+                    Size = Models.Enums.Size.Avarage,
+                    Status = Models.Enums.Status.Ready_For_Adoption,
                     OriginlCity = new City { CityId = 1, CityName = "Jerusalem" }
                 },
                 new Animal
@@ -78,9 +78,9 @@ namespace AnimalAdoptionCenter.Services
                     Name = "dan",
                     Age = 4,
                     SubCategory = "dani",
-                    Sex = Models.Enums.eSex.Male,
-                    Size = Models.Enums.eSize.Avarage,
-                    Status = Models.Enums.eStatus.Ready_For_Adoption,
+                    Sex = Models.Enums.Sex.Male,
+                    Size = Models.Enums.Size.Avarage,
+                    Status = Models.Enums.Status.Ready_For_Adoption,
                     OriginlCity = new City { CityId = 2, CityName = "Tel Aviv" }
                 }
             };

@@ -1,6 +1,6 @@
 ﻿namespace AnimalAdoptionCenter.Models.Enums
 {
-    public enum eSize
+    public enum Size
     {
         Tiny,
         Small,
