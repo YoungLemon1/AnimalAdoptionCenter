@@ -8,19 +8,20 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/StyleSheet.css" />
+	<link rel="stylesheet" href="css/StyleSheet.css" asp-append-version="true">
 </head>
 <body class="templateBody">
 	<header>
 		<nav class="navbar">
 			<ul>
 				<li ><a asp-action="index" asp-controller="Home">Home</a></li>
-				<li ><a asp-action="index" asp-controller="Catalog">Catalogue</a></li>
+				<li ><a asp-action="index" asp-controller="Catalog">Catalog</a></li>
+				<li ><a asp-action="index" asp-controller="Animal">Admin</a></li>
+
 			</ul>
 		</nav>
 	</header>
-	<div class="mainContentWrapper">
+	<div class="main-content-wrapper">
 		@RenderBody()
 	</div>
 </body>

@@ -1,63 +1,71 @@
-﻿@{
-    ViewBag.Title = "Index";
-}
-
-<h1>Index</h1>
-<h2>Catalog:</h2>
-<div>
-    <label for="searchBreed"> Breed:
-        <select name="searchBreed">
-            @{
-                for (int i = 0; i < 5; i++)
-                {
-                    <option value="modelDogExample"> dog @i </option>
+﻿<head>
+    <title>Categories</title>
+</head>
+<body>
+    <h1>Catalog</h1>
+    <div class="catalog">
+        <div>
+            <input type="search" placeholder="Search..." />
+            <button>Search</button>
+        </div>
+        <div>
+            <label for="category">Type</label>
+            <select id="category" name="category" required>
+                <option hidden selected value=""></option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="hamster">Hamster</option>
+                <option value="turtle">turtle</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="searchSubCategory"> Sub Category:</label>
+            <input type="text" id="searchSubCategory" name="searchSubCategory" />
+        </div>
+        <div>
+            <label for="searchSize"> Size: </label>
+            <select name="searchSize" id="searchSize">
+                @{
+                    for (int i = 0; i < 4; i++)
+                    {
+                                <option value="enumSizeExample"> size @i </option>
+                    }
                 }
-            }
-        </select>
-    </label>
-    <label for="searchSize"> Size:
-        <select name="searchSize">
-            @{
-                for (int i = 0; i < 4; i++)
-                {
-                    <option value="enumSizeExample"> size @i </option>
-                }
-            }
-        </select>
-    </label>
-    <label for="searchGender"> Gender:
-        <select name="searchGender">
-            @{
-            for (int i = 0; i < 2; i++)
-            {
-                 <option value="enumGenderExample"> gender @i </option>
-            }
-        }
-        </select>
-    </label>
-    <input type="range">
-    <input type="search" placeholder="Search.." />
-</div>
-<div>
-    <div>
-        @{
-            for (int i = 0; i < 2; i++)
-            {
-                <div><button> Category @i </button> </div>
-            }
-        }
+            </select>
+        </div>
+        <div>
+            <label for="searchSex"> Sex: </label>
+            <select name="searchSex" id="searchSex">
+                <option hidden selected value=""></option>
+                <option value="male">M</option>
+                <option value="female">F</option>
+            </select>
+        </div>
+        <div>
+            <label for="searchAge"> Age:</label>
+            <input type="number" min="0" max="99" id="searchAge" name="searchAge">
+            @*<input type="range" name="searchAge" id="searchAge">*@
+        </div>
     </div>
-    <div>
+    <hr /> 
+    <div id="animal-profile-display">
         @{
             for (int i = 0; i < 3; i++)
             {
-                <div>
-                    <img>
-                    <p>name: @i age: @i</p>
-                    <p>size: @i gender: @i</p>
-                    <button> Profile @i </button>
-                </div>
+                    <div class="animal-profile" id="profile@i" name="profile@i">
+                        <div class="animal-profile-img">
+                            <img alt=" profile picture" src="/Images/Cat1.jpg">
+                        </div>
+                    <div class="animal-profile-content">
+                            <p>Age: 15</p>
+                            <p>size: Small</p>
+                            <button> Profile @i </button>
+                        </div>
+                    </div>
             }
         }
     </div>
-</div>
+</body>

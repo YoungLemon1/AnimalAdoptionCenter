@@ -1,0 +1,80 @@
+﻿@using AnimalAdoptionCenter.Models.Enums;
+@model AnimalAdoptionCenter.Models.Animal
+@{
+    var categories = new List<SelectListItem>();
+    foreach (var category in ViewBag.Categories)
+    {
+        categories.Add(
+            new SelectListItem { Value = category.Id.ToString(), Text = category.Name }
+        );
+    }
+}
+<head>
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Admin</h1>
+    <form asp-action="AddAnimal" asp-controller="Animal" id="newAnimalForm" method="post">
+        <div>
+            <h2>Add New Animal</h2>
+        </div>
+        <div>
+            <label for="category">Type</label>
+            <select id="category" required asp-for="CategoryId">
+                <option hidden selected value=""></option>
+                @foreach (var item in categories)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label for="subCategory">Sub-type</label>
+            <input type="text" id="subCategory" asp-for="SubCategory">
+        </div>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" asp-for="Name">
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" min="0" max="99" id="age" asp-for="Age">
+        </div>
+        <div>
+            <label for="sex">Sex</label>
+            <select id="sex" required asp-for="Sex"         
+                    asp-items="Html.GetEnumSelectList<eSex>()">
+                <option hidden selected value=""></option>
+            </select>
+        </div>
+        <div>
+            <label for="size">Size</label>
+            <select id="size" required asp-for="Size"
+                    asp-items="Html.GetEnumSelectList<eSize>()">
+                <option hidden selected value=""></option>
+            </select>
+        </div>
+        <section>
+            <div>
+                <label for="vaccinated" asp-for="IsVaccinated">Vaccinated</label>
+                <input type="checkbox" id="vaccinated" asp-for="IsVaccinated" />
+            </div>
+            <div>
+                <label for="trained" asp-for="IsTrained">Trained</label>
+                <input type="checkbox" id="trained" asp-for="IsTrained">
+            </div>
+            <div>
+                <label for="sterilized" asp-for="IsSterilized">Sterilized</label>
+                <input type="checkbox" id="sterilized" asp-for="IsSterilized">
+            </div>
+        </section>
+        <div>
+            <label id="description-label" for="description">Description</label>
+            <textarea id="description" name="description" cols="40" rows="5" maxlength="250"></textarea>
+        </div>
+        <div><button id="form-submmission" type="submit">Add animal</button></div>
+    </form>
+    <hr />
+    <h2>Move Animal to archive</h2>
+
+</body>

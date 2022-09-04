@@ -1,0 +1,91 @@
+﻿@model AnimalAdoptionCenter.Models.Animal
+@{
+    var categories = new List<SelectListItem>();
+    foreach (var category in ViewBag.Categories)
+    {
+        categories.Add(
+            new SelectListItem { Value = category.CategoryId.ToString(), Text = category.CategoryName }
+        );
+    }
+}
+<head>
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Admin</h1>
+        <form asp-action="AddAnimal" asp-controller="Admin" id="newAnimalForm" method="post">
+            <div>
+                <h2>Add New Animal</h2>
+            </div>
+            <div>
+                <label for="category">Type</label>
+                <select id="category" name="category" required asp-for="CategoryId">
+                <option hidden selected value=""></option>
+                    @foreach (var item in categories)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+@*                    <option hidden selected value=""></option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="turtle">Turtle</option>
+                    <option value="other">Other</option>*@
+                </select>
+            </div>
+            <div>
+                <label for="subCategory">Sub-type</label>
+                <input type="text" id="subCategory" name="subCategory">
+            </div>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" asp-for="Name">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" min="0" max="99" id="age" name="Age">
+            </div>
+            <div>
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex">
+                    <option hidden selected value=""></option>
+                    <option value="male">M</option>
+                    <option value="female">F</option>
+                </select>
+            </div>
+            <div>
+                <label for="size">Size</label>
+                <select id="size" name="size">
+                    <option hidden selected value=""></option>
+                    <option value="tiny">Tiny</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <section>
+                <div>
+                    <label for="vaccinated">Vaccinated</label>
+                    <input type="checkbox" id="vaccinated" name="vaccinated">
+                </div>
+                <div>
+                    <label for="trained">Trained</label>
+                    <input type="checkbox" id="trained" name="trained">
+                </div>
+                <div>
+                    <label for="sterilized">Sterilized</label>
+                    <input type="checkbox" id="sterilized" name="sterilized">
+                </div>
+            </section>
+            <div>
+                <label id="description-label" for="description">Description</label>
+                <textarea id="description" name="description" cols="40" rows="5" maxlength="250"></textarea>
+            </div>
+            <div><button id="form-submmission" type="submit">Add animal</button></div>
+        </form>
+        <hr/>
+        <h2>Move Animal to archive</h2>
+
+</body>

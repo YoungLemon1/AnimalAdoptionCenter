@@ -15,9 +15,9 @@ namespace AnimalAdoptionCenter.Models
         public int Age { get; set; }
         //public int CityId { get; set; }
         //public City? OriginlCity { get; set; }
-        public Sex Sex { get; set; }
-        public Status Status { get; set; }
-        public Size Size { get; set; }
+        public eSex Sex { get; set; }
+        public eStatus Status { get; set; }
+        public eSize Size { get; set; }
         public bool IsVaccinated { get; set; }
         public bool IsSterilized { get; set; }
         public bool IsTrained { get; set; }
