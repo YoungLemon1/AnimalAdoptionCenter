@@ -67,37 +67,37 @@ namespace AnimalAdoptionCenter.Services.Repositories
         }
         void IRepository.UpdateAnimal(int id, Animal animal)
         {
-            var animalInDb = _context.Animals!.Single(m => m.AnimalId == id);
+            var animalInDb = _context.Animals!.Single(m => m.Id == id);
             animalInDb = animal;
             _context.SaveChanges();
         }
         void IRepository.UpdateCategory(int id, Category category)
         {
-            var categoryInDb = _context.Categories!.Single(m => m.CategoryId == id);
+            var categoryInDb = _context.Categories!.Single(m => m.Id == id);
             categoryInDb = category;
             _context.SaveChanges();
         }
         void IRepository.UpdateCity(int id, City city)
         {
-            var cityInDb = _context.Cities!.Single(m => m.CityId == id);
+            var cityInDb = _context.Cities!.Single(m => m.Id == id);
             cityInDb = city;
             _context.SaveChanges();
         }
         void IRepository.UpdateComment(int id, Comment comment)
         {
-            var commentInDb = _context.Comments!.Single(m => m.CommentID == id);
+            var commentInDb = _context.Comments!.Single(m => m.Id == id);
             commentInDb = comment;
             _context.SaveChanges();
         }
         void IRepository.UpdateCustomer(int id, Customer customer)
         {
-            var commentInDb = _context.Customers!.Single(m => m.CustomerId == id);
+            var commentInDb = _context.Customers!.Single(m => m.Id == id);
             commentInDb = customer;
             _context.SaveChanges();
         }
         void IRepository.UpdateSubCategory(int id, SubCategory subCategory)
         {
-            var subCategoryInDb = _context.SubCategories!.Single(m => m.SubCategoryId == id);
+            var subCategoryInDb = _context.SubCategories!.Single(m => m.Id == id);
             subCategoryInDb = subCategory;
             _context.SaveChanges();
         }
@@ -130,6 +130,21 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             _context.SubCategories!.Remove(subCategory);
             _context.SaveChanges();
+        }
+
+        public Animal GetAnimalById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Animal GetAnimalByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Animal GetAnimalByComments()
+        {
+            throw new NotImplementedException();
         }
     }
 }

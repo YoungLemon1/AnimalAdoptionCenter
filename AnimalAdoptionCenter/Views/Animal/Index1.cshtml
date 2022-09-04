@@ -1,23 +1,38 @@
-﻿<head>
+﻿@model AnimalAdoptionCenter.Models.Animal
+@{
+    var categories = new List<SelectListItem>();
+    foreach (var category in ViewBag.Categories)
+    {
+        categories.Add(
+            new SelectListItem { Value = category.CategoryId.ToString(), Text = category.CategoryName }
+        );
+    }
+}
+<head>
     <title>Admin</title>
 </head>
 <body>
     <h1>Admin</h1>
-        <form asp-action="Add Animal" asp-controller="Admin" id="newAnimalForm">
+        <form asp-action="AddAnimal" asp-controller="Admin" id="newAnimalForm" method="post">
             <div>
                 <h2>Add New Animal</h2>
             </div>
             <div>
                 <label for="category">Type</label>
-                <select id="category" name="category" required>
-                    <option hidden selected value=""></option>
+                <select id="category" name="category" required asp-for="CategoryId">
+                <option hidden selected value=""></option>
+                    @foreach (var item in categories)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+@*                    <option hidden selected value=""></option>
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
                     <option value="bird">Bird</option>
                     <option value="rabbit">Rabbit</option>
                     <option value="hamster">Hamster</option>
                     <option value="turtle">Turtle</option>
-                    <option value="other">Other</option>
+                    <option value="other">Other</option>*@
                 </select>
             </div>
             <div>
@@ -26,7 +41,7 @@
             </div>
             <div>
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" asp-for="Name">
             </div>
             <div>
                 <label for="age">Age</label>

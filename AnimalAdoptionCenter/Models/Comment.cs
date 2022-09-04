@@ -2,10 +2,11 @@
 {
     public class Comment
     {
-        public int CommentID { get; set; }
-        public int AnimalID { get; set; }
+        public int Id { get; set; }
+        public int AnimalId { get; set; }
         public string? Text { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public Customer? Commenter { get; set; }
+        public int CustomerId { get; set; }
+        public Customer? Customer { get; set; }
     }
 }
