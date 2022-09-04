@@ -1,0 +1,20 @@
+﻿@inject AnimalAdoptionCenter.Services.GeneralServices.ICategoriesService service
+<nav>
+    <ul>
+        @{
+            foreach (var cate in service.GetCategories())
+            {
+                <li>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="@cate.ImageUrl" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">
+                                @cate.CategoryName
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</nav>

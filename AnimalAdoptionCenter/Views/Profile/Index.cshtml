@@ -1,0 +1,28 @@
+﻿@model AnimalAdoptionCenter.Models.Animal
+<header>
+    <h1>@Model.Name's Profile</h1> <br />
+</header>
+<div class="popularAnimals">
+    <img src="@Model.ProfileImagePath" /> <br />
+    <table>
+        <tr><td>@Model.Age</td></tr>
+        <tr><td>@Model.Size</td></tr>
+        <tr><td>@Model.Sex</td></tr>
+        <tr><td>@Model.SubCategory</td></tr>
+        <tr><td>@Model.OriginlCity</td></tr>
+        <tr><td>@Model.Description</td></tr>
+        <tr>
+            <td>
+                <h3>Comments:</h3>
+                @{
+                    for (int i = 0; i < 3; i++)
+                    {
+                        <p>@i . @Model.Name 's comment</p>
+                    }
+                }
+            </td>
+        </tr>
+    </table>
+</div>
+
+

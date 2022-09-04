@@ -1,0 +1,28 @@
+﻿@inject AnimalAdoptionCenter.Services.GeneralServices.ISearchService service
+
+<div class="searchBar">
+    <input id="searchButton" type="text" placeholder="Search..." value="@service.SearchText" />
+    <button onclick="">Search</button>
+</div>
+
+<hr />
+<nav @*style="visibility:collapse"*@>
+    <ul>
+        @{
+            foreach (var animal in service.SearchAll())
+            {
+                <li>
+                    <div class="card popularAnimals" style="width: 18rem;">
+                        <img class="card-img-top" src="@animal.ProfileImagePath" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">
+                                @animal.Name
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</nav>
+<script src="/javascript/ShowSearchResults.js" type="text/javascript"></script>
