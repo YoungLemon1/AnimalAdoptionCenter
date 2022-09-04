@@ -4,7 +4,7 @@
 
 .mainContentWrapper {
     margin-top: 10px;
-    margin-left: 8px;
+    margin-left: 20px;
 }
 
 .navbar {
@@ -36,4 +36,8 @@ li a {
 .popularAnimals img {
     width: 200px;
     height: 150px;
+}
+
+.searchBar{
+    padding:15px;
 }

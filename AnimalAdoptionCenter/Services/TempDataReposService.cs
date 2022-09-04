@@ -5,41 +5,22 @@ namespace AnimalAdoptionCenter.Services
     public class TempDataReposService : ITempDataReposService
     {
 
-        public IEnumerable<Animal> GetAllAnimals()
+        public IEnumerable<Animal> GetAllAnimals() => IntiailzieAnimalz();
+        public IEnumerable<Category> GetAllCategories() => IntiailzieCategories();
+        public IEnumerable<City> GetAllCities() => IntiailzieCities();
+        private IEnumerable<City> IntiailzieCities()
         {
-            return IntiailzieAnimalz();
-        }
-
-        public IEnumerable<Category> GetAllCategories()
-        {
-            return IntiailzieCategories();
-        }
-
-        private IEnumerable<Animal> IntiailzieAnimalz()
-        {
-            return new List<Animal>
+            return new List<City>
             {
-                new Animal
+                new City
                 {
-                    AnimalId = 1,
-                    ProfileImagePath = "/lib/Dog1.jpg",
-                    Name = "bob",
-                    Age = 3,
-                    SubCategory = "Dalmaty",
-                    Sex = Models.Enums.eSex.Male,
-                    Size = Models.Enums.eSize.Avarage,
-                    Status = Models.Enums.eStatus.Ready_For_Adoption,
+                    CityId = 1,
+                    CityName = "Jerusalem"
                 },
-                new Animal
+                new City
                 {
-                    AnimalId = 2,
-                    ProfileImagePath = "/lib/Cat1.jpg",
-                    Name = "dan",
-                    Age = 4,
-                    SubCategory = "dani",
-                    Sex = Models.Enums.eSex.Male,
-                    Size = Models.Enums.eSize.Avarage,
-                    Status = Models.Enums.eStatus.Ready_For_Adoption,
+                    CityId = 2,
+                    CityName = "Tel Aviv"
                 }
             };
         }
@@ -71,6 +52,36 @@ namespace AnimalAdoptionCenter.Services
                     CategoryId = 4,
                     CategoryName = "Other",
                     ImageUrl ="/lib/Pictures/Categories/other.png"
+                }
+            };
+        }
+        private IEnumerable<Animal> IntiailzieAnimalz()
+        {
+            return new List<Animal>
+            {
+                new Animal
+                {
+                    AnimalId = 1,
+                    ProfileImagePath = "/lib/pictures/animals/Dog1.jpg",
+                    Name = "bob",
+                    Age = 3,
+                    SubCategory = "Dalmaty",
+                    Sex = Models.Enums.eSex.Male,
+                    Size = Models.Enums.eSize.Avarage,
+                    Status = Models.Enums.eStatus.Ready_For_Adoption,
+                    OriginlCity = new City { CityId = 1, CityName = "Jerusalem" }
+                },
+                new Animal
+                {
+                    AnimalId = 2,
+                    ProfileImagePath = "/lib/pictures/animals/Cat1.jpg",
+                    Name = "dan",
+                    Age = 4,
+                    SubCategory = "dani",
+                    Sex = Models.Enums.eSex.Male,
+                    Size = Models.Enums.eSize.Avarage,
+                    Status = Models.Enums.eStatus.Ready_For_Adoption,
+                    OriginlCity = new City { CityId = 2, CityName = "Tel Aviv" }
                 }
             };
         }

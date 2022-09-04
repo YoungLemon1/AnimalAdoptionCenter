@@ -2,26 +2,27 @@
 <header>
     <h1>@Model.Name's Profile</h1> <br />
 </header>
-<div>
-    <div class="popularAnimals">
-        <img src="@Model.ProfileImagePath" /> <br />
-    </div>
-    <div>
-        <p>@Model.Age</p>
-        <p>@Model.Size</p>
-        <p>@Model.Sex</p>
-        <p>@Model.SubCategory</p>
-        <p>@Model.OriginlCity</p>
-        <p>@Model.Description</p>
-    </div>
-    <div>
-        <h3>Comments:</h3>
-        @{
-            for(int i=0; i<3; i++)
-            {
-                <p>@i . @Model.Name 's comment</p>
-            }
-        }
-    </div>
+<div class="popularAnimals">
+    <img src="@Model.ProfileImagePath" /> <br />
+    <table>
+        <tr><td>@Model.Age</td></tr>
+        <tr><td>@Model.Size</td></tr>
+        <tr><td>@Model.Sex</td></tr>
+        <tr><td>@Model.SubCategory</td></tr>
+        <tr><td>@Model.OriginlCity</td></tr>
+        <tr><td>@Model.Description</td></tr>
+        <tr>
+            <td>
+                <h3>Comments:</h3>
+                @{
+                    for (int i = 0; i < 3; i++)
+                    {
+                        <p>@i . @Model.Name 's comment</p>
+                    }
+                }
+            </td>
+        </tr>
+    </table>
 </div>
+
 

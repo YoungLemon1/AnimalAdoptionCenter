@@ -26,15 +26,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Services\DatabaseServices\" />
-    <Folder Include="wwwroot\javascript\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\lib\Pictures\Animals\Cat1.jpg">
+    <Content Update="wwwroot\lib\pictures\animals\Cat1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

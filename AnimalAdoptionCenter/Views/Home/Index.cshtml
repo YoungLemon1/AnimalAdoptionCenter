@@ -9,20 +9,14 @@
     <title>Index</title>
 </head>
 <body>
-    @*Title*@
-    <h1>Home Page</h1>
-    <hr/>
     @*Search-Bar*@
     @await Html.PartialAsync("_SearchView")
     <hr/>
     @*Popular animlals*@
-    <div class="popularAnimals">
-        <h2>Popular Animals</h2>
-        <img src="/lib/Dog1.jpg" alt="A Dog"/>
-        <img src="/lib/Cat1.jpg" alt="A Cat"/>
-    </div>
+    <h1>Popular animlals</h1>
     <hr/>
     @*Categories*@
+    <h1>Categories</h1>
     @await Html.PartialAsync("_HomeCategoriesView")
     <hr/>
     @*About us*@
