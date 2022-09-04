@@ -1,5 +1,7 @@
 ﻿using AnimalAdoptionCenter.Models;
-using AnimalAdoptionCenter.Models.Enums;
+using AnimalAdoptionCenter.Services.Repositories;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AnimalAdoptionCenter.Services.GeneralServices
 {
@@ -19,12 +21,12 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         /// 
         /// </summary>
 
-        ITempDataReposService dataService;
+        readonly IRepository dataService;
         public string SearchText { get; set; }
-        public SearchService(ITempDataReposService empDataReposService)
+        public SearchService(IRepository empDataReposService)
         {
             dataService = empDataReposService;
-            SearchedList = dataService.GetAllAnimals();
+            SearchedList = dataService.GetAnimals();
             SearchText = "";
         }
         public IEnumerable<Animal> SearchedList { get; set; }
@@ -32,14 +34,14 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         {
             if (SearchText != "")
                 return GroupResults().GroupBy(a =>
-                a.AnimalId).Select(y => y.First());
+                a.Id).Select(y => y.First());
             else return new List<Animal>();
         }
         public IEnumerable<Animal> SearchAll(string age, string city,
                                              string size, string name, string type,
                                              string gender, string subCategory)
         {
-            SearchedList = dataService.GetAllAnimals();
+            SearchedList = dataService.GetAnimals();
             GetProfilesByAge(age);
             GetProfilesByCity(city);
             GetProfilesBySize(size);
@@ -58,7 +60,7 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         public IEnumerable<Animal> GetProfilesByType(string typeName) => SearchedList.Where(a =>
             a.GetType().Name.Contains(typeName));
         public IEnumerable<Animal> GetProfilesByCity(string city) => SearchedList.Where(a =>
-            a.OriginlCity!.CityName!.Contains(city));
+            a.OriginlCity!.Name!.Contains(city));
         public IEnumerable<Animal> GetProfilesByGender(string sex) => SearchedList.Where(a =>
             a.Sex.ToString() == sex);
         public IEnumerable<Animal> GetProfilesBySize(string size) => SearchedList.Where(a =>
@@ -76,7 +78,7 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         IEnumerable<IEnumerable<Animal>> SearchAllOptions()
         {
             yield return GetProfilesByAge();
-            yield return GetProfilesByCity();
+            //yield return GetProfilesByCity();
             yield return GetProfilesBySize();
             yield return GetProfilesByName();
             yield return GetProfilesByType();
@@ -86,17 +88,17 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         IEnumerable<Animal> GetProfilesByAge() =>
             SearchedList.Where(a => a.Age.ToString() == SearchText);
         IEnumerable<Animal> GetProfilesByCity() =>
-            dataService.GetAllAnimals().Where(a => a.OriginlCity!.CityName!.Contains(SearchText));
+            dataService.GetAnimals().Where(a => a.OriginlCity!.Name!.Contains(SearchText));
         IEnumerable<Animal> GetProfilesBySex() =>
-            dataService.GetAllAnimals().Where(a => a.Sex.ToString() == SearchText);
+            dataService.GetAnimals().Where(a => a.Sex.ToString() == SearchText);
         IEnumerable<Animal> GetProfilesByName() =>
-            dataService.GetAllAnimals().Where(a => a.Name!.Contains(SearchText));
+            dataService.GetAnimals().Where(a => a.Name!.Contains(SearchText));
         IEnumerable<Animal> GetProfilesBySize() =>
-            dataService.GetAllAnimals().Where(a => a.Size.ToString().Contains(SearchText));
+            dataService.GetAnimals().Where(a => a.Size.ToString().Contains(SearchText));
         IEnumerable<Animal> GetProfilesBySubCategory() =>
-            dataService.GetAllAnimals().Where(a => a.SubCategory!.Contains(SearchText));
+            dataService.GetAnimals().Where(a => a.SubCategory!.Contains(SearchText));
         IEnumerable<Animal> GetProfilesByType() =>
-            dataService.GetAllAnimals().Where(a => a.GetType().Name.Contains(SearchText));
+            dataService.GetAnimals().Where(a => a.GetType().Name.Contains(SearchText));
 
     }
 }

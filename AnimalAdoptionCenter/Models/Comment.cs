@@ -1,4 +1,6 @@
-﻿namespace AnimalAdoptionCenter.Models
+﻿using System;
+
+namespace AnimalAdoptionCenter.Models
 {
     public class Comment
     {

@@ -13,8 +13,8 @@ namespace AnimalAdoptionCenter.Models
         public string? SubCategory { get; set; }
         public string? ProfileImagePath { get; set; }
         public int Age { get; set; }
-        //public int CityId { get; set; }
-        //public City? OriginlCity { get; set; }
+        public int CityId { get; set; }
+        public City? OriginlCity { get; set; }
         public eSex Sex { get; set; }
         public eStatus Status { get; set; }
         public eSize Size { get; set; }

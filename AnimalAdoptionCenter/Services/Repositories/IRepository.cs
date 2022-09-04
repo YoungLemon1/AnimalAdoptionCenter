@@ -1,13 +1,14 @@
 ﻿namespace AnimalAdoptionCenter.Services.Repositories;
 using AnimalAdoptionCenter.Models;
+using System.Collections.Generic;
 
 public interface IRepository
 {
     //Animal
     IEnumerable<Animal> GetAnimals();
-    Animal GetAnimalById(int id);
-    Animal GetAnimalByName(string name);
-    Animal GetAnimalByComments();
+    //Animal GetAnimalById(int id);
+    //Animal GetAnimalByName(string name);
+    //Animal GetAnimalByComments();
     void InsertAnimal(Animal animal);
     void UpdateAnimal(int id, Animal animal);
     void DeleteAnimal(Animal animal);

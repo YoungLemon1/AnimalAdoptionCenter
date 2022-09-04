@@ -1,15 +1,15 @@
-﻿@inject AnimalAdoptionCenter.Services.GeneralServices.ICategoriesService service
+﻿@inject AnimalAdoptionCenter.Services.Repositories.IRepository repository
 <nav>
     <ul>
         @{
-            foreach (var cate in service.GetCategories())
+            foreach (var cate in repository.GetCategories())
             {
                 <li>
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="@cate.ImageUrl" alt="Card image cap">
+                        <img class="card-img-top" src="@cate.ImagePath" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">
-                                @cate.CategoryName
+                                @cate.Name
                             </p>
                         </div>
                     </div>

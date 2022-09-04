@@ -1,11 +1,14 @@
 ﻿using AnimalAdoptionCenter.Data;
 using AnimalAdoptionCenter.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AnimalAdoptionCenter.Services.Repositories
 {
     public class DataRepository : IRepository
     {
-        private AACContext _context;
+        private readonly AACContext _context;
 
         public DataRepository(AACContext context)
         {
@@ -14,6 +17,20 @@ namespace AnimalAdoptionCenter.Services.Repositories
         IEnumerable<Animal> IRepository.GetAnimals()
         {
             return _context.Animals!;
+        }
+        public Animal GetAnimalById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Animal GetAnimalByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Animal GetAnimalByComments()
+        {
+            throw new NotImplementedException();
         }
         IEnumerable<Category> IRepository.GetCategories()
         {
@@ -130,21 +147,6 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             _context.SubCategories!.Remove(subCategory);
             _context.SaveChanges();
-        }
-
-        public Animal GetAnimalById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Animal GetAnimalByName(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Animal GetAnimalByComments()
-        {
-            throw new NotImplementedException();
         }
     }
 }

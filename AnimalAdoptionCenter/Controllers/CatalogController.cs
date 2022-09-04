@@ -1,5 +1,6 @@
 ﻿using AnimalAdoptionCenter.Services.GeneralServices;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace AnimalAdoptionCenter.Controllers
 {
@@ -16,6 +17,7 @@ namespace AnimalAdoptionCenter.Controllers
         }
         public IActionResult Search(int id)
         {
-
+            return View();
         }
+    }
 }

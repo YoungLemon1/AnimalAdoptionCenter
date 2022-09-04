@@ -1,5 +1,6 @@
 ﻿using AnimalAdoptionCenter.Models;
 using AnimalAdoptionCenter.Models.Enums;
+using System.Collections.Generic;
 
 namespace AnimalAdoptionCenter.Services.GeneralServices
 {
