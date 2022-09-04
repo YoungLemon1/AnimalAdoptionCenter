@@ -4,7 +4,7 @@
     {
         Tiny,
         Small,
-        Avarage,
+        Medium,
         Large
     }
 }
