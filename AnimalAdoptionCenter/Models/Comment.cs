@@ -6,6 +6,7 @@ namespace AnimalAdoptionCenter.Models
     {
         public int Id { get; set; }
         public int AnimalId { get; set; }
+        public Animal? Animal { get; set; }
         public string? Text { get; set; }
         public DateTime? CreatedDate { get; set; }
         public int CustomerId { get; set; }

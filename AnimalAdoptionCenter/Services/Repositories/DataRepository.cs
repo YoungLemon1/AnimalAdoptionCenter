@@ -20,21 +20,24 @@ namespace AnimalAdoptionCenter.Services.Repositories
         }
         public Animal GetAnimalById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Animals!.Single(animal => animal.Id == id);
         }
 
         public Animal GetAnimalByName(string name)
         {
-            throw new NotImplementedException();
+            return _context.Animals!.Single(animal => animal.Name == name);
         }
-
-        public Animal GetAnimalByComments()
+        public IEnumerable<Animal> GetPopularAnimals()
         {
             throw new NotImplementedException();
         }
         IEnumerable<Category> IRepository.GetCategories()
         {
             return _context.Categories!;
+        }
+        IEnumerable<Category> IRepository.GetHomeCategories()
+        {
+            return _context.Categories!.Where(c => c.Id < 4);
         }
         IEnumerable<City> IRepository.GetCities()
         {

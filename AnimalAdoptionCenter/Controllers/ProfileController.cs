@@ -11,7 +11,7 @@ namespace AnimalAdoptionCenter.Controllers
         public ProfileController(IRepository repository) => _repository = repository;
         public IActionResult Index(int id)
         {
-            Animal animal = _repository.GetAnimals().Single(animal => animal.Id == id);
+            Animal animal = _repository.GetAnimalById(id);
             return View(animal);
         }
     }

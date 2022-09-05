@@ -46,8 +46,8 @@
 
 
   <ItemGroup>
-    <None Include="wwwroot\Images\Cat2.png" />
-    <None Include="wwwroot\Images\Dog2.png" />
+    <None Include="wwwroot\Images\Animals\Cat2.png" />
+    <None Include="wwwroot\Images\Animals\Dog2.png" />
   </ItemGroup>
 
   <ItemGroup>

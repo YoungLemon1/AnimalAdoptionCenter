@@ -6,14 +6,15 @@ public interface IRepository
 {
     //Animal
     IEnumerable<Animal> GetAnimals();
-    //Animal GetAnimalById(int id);
-    //Animal GetAnimalByName(string name);
-    //Animal GetAnimalByComments();
+    IEnumerable<Animal> GetPopularAnimals();
+    Animal GetAnimalById(int id);
+    Animal GetAnimalByName(string name);
     void InsertAnimal(Animal animal);
     void UpdateAnimal(int id, Animal animal);
     void DeleteAnimal(Animal animal);
     //Category
     IEnumerable<Category> GetCategories();
+    IEnumerable<Category> GetHomeCategories();
     void InsertCategory(Category category);
     void UpdateCategory(int id, Category category);
     void DeleteCategory(Category category);
