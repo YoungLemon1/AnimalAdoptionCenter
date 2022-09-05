@@ -1,15 +1,16 @@
-﻿@inject AnimalAdoptionCenter.Services.GeneralServices.ISearchService service
-
-<div class="searchBar">
+﻿@*@inject AnimalAdoptionCenter.Services.GeneralServices.ISearchService service
+*@
+@inject IRepository repository
+@*<div class="searchBar">
     <input id="searchButton" type="text" placeholder="Search..." value="@service.SearchText" />
     <button onclick="">Search</button>
-</div>
+</div>*@
 
 <hr />
 <nav @*style="visibility:collapse"*@>
     <ul>
         @{
-            foreach (var animal in service.SearchAll())
+            foreach (var animal in repository.GetAnimals())
             {
                 <li>
                     <div class="card popularAnimals" style="width: 18rem;">

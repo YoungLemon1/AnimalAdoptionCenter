@@ -78,7 +78,7 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         IEnumerable<IEnumerable<Animal>> SearchAllOptions()
         {
             yield return GetProfilesByAge();
-            //yield return GetProfilesByCity();
+            yield return GetProfilesByCity();
             yield return GetProfilesBySize();
             yield return GetProfilesByName();
             yield return GetProfilesByType();
