@@ -27,7 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Services\GeneralServices\IModelService.cs" />
     <Compile Include="Services\GeneralServices\ISearchService.cs" />
+    <Compile Include="Services\GeneralServices\ModelService.cs" />
     <Compile Include="Services\GeneralServices\SearchService.cs" />
     <Compile Include="Services\Repositories\DataRepository.cs" />
     <Compile Include="Services\Repositories\IRepository.cs" />

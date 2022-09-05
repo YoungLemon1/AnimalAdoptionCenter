@@ -24,5 +24,6 @@ namespace AnimalAdoptionCenter.Models
         //public int CustomerId { get; set; }
         //public Customer? Customer { get; set; }
         public string? Description { get; set; }
+        public ICollection<Comment>? Comments { get; set; }
     }
 }

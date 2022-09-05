@@ -1,7 +1,14 @@
 ﻿@inject IRepository repository
+@model AnimalAdoptionCenter.Models.Animal;
 
 <div class="popularAnimals">
     <h2>Popular Animals</h2>
-    <img src="/Images/animals/Dog1.jpg" alt="A Dog" />
-    <img src="/Images/animals/Cat1.jpg" alt="A Cat" />
+    @{
+        var popularAnimals = repository.GetPopularAnimals().ToList();
+        foreach(var animal in popularAnimals)
+        {
+            string categoryName = repository.GetCategoryById(animal.CategoryId).Name!;
+            <img src="@animal.ProfileImagePath" alt="Popular animal: A @categoryName named @animal.Name"/>
+        }
+    }
 </div>

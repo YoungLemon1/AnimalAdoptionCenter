@@ -1,11 +1,13 @@
 ﻿namespace AnimalAdoptionCenter.Services.Repositories;
 using AnimalAdoptionCenter.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
 public interface IRepository
 {
     //Animal
     IEnumerable<Animal> GetAnimals();
+    IEnumerable<Animal> GetPopularAnimals(int num);
     IEnumerable<Animal> GetPopularAnimals();
     Animal GetAnimalById(int id);
     Animal GetAnimalByName(string name);
@@ -15,6 +17,8 @@ public interface IRepository
     //Category
     IEnumerable<Category> GetCategories();
     IEnumerable<Category> GetHomeCategories();
+    Category GetCategoryById(int id);
+    Category GetCategoryByName(string name);
     void InsertCategory(Category category);
     void UpdateCategory(int id, Category category);
     void DeleteCategory(Category category);
@@ -30,7 +34,7 @@ public interface IRepository
     void DeleteCustomer(Customer customer);
     //Comment
     IEnumerable<Comment> GetComments();
-    void InsertComment(Comment comment);
+    void InsertComment(Comment comment, Animal animal);
     void UpdateComment(int id, Comment comment);
     void DeleteComment(Comment comment);
     //SubCategory

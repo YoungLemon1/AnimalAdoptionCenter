@@ -27,9 +27,13 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             return _context.Animals!.Single(animal => animal.Name == name);
         }
-        public IEnumerable<Animal> GetPopularAnimals()
+        IEnumerable<Animal> IRepository.GetPopularAnimals(int num)
         {
-            throw new NotImplementedException();
+            return _context.Animals!.OrderByDescending(animals => animals.Comments!.Count).Take(num);
+        }
+        IEnumerable<Animal> IRepository.GetPopularAnimals()
+        {
+            return _context.Animals!.OrderByDescending(animals => animals.Comments!.Count).Take(2);
         }
         IEnumerable<Category> IRepository.GetCategories()
         {
@@ -38,6 +42,14 @@ namespace AnimalAdoptionCenter.Services.Repositories
         IEnumerable<Category> IRepository.GetHomeCategories()
         {
             return _context.Categories!.Where(c => c.Id < 4);
+        }
+        Category IRepository.GetCategoryById(int id)
+        {
+            return _context.Categories!.Single(c => c.Id == id);
+        }
+        Category IRepository.GetCategoryByName(string name)
+        {
+            return _context.Categories!.Single(c => c.Name == name);
         }
         IEnumerable<City> IRepository.GetCities()
         {
@@ -70,9 +82,11 @@ namespace AnimalAdoptionCenter.Services.Repositories
             _context.Cities!.Add(city);
             _context.SaveChanges();
         }
-        void IRepository.InsertComment(Comment comment)
+        void IRepository.InsertComment(Comment comment, Animal animal)
         {
             _context.Comments!.Add(comment);
+            animal = GetAnimalById(comment.AnimalId);
+            animal.Comments!.Add(comment);
             _context.SaveChanges();
         }
         void IRepository.InsertCustomer(Customer customer)
@@ -150,6 +164,16 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             _context.SubCategories!.Remove(subCategory);
             _context.SaveChanges();
+        }
+
+        Animal IRepository.GetAnimalById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Animal IRepository.GetAnimalByName(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }
