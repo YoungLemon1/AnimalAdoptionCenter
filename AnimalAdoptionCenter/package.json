@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "json": "11.0.0",
+    "jquery": "3.6.1",
+    "ajax": "0.0.4"
+  },
+  "name": "asp.net",
+  "private": true,
+  "version": "1.0.0"
+}
