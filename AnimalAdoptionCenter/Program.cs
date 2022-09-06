@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IRepository, DataRepository>();
-//builder.Services.AddSingleton<ISearchService, SearchService>();
+builder.Services.AddTransient<ISearchService, SearchService>();
 //builder.Services.AddDbContext<AnimalAdoptionCenterContext>(options => options.UseSqlite("Data Source=C:\\temp\\AnimalAdoptionCenterDb.db"));
 string connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
 builder.Services.AddDbContext<AACContext>(options => options.UseSqlServer(connectionString));

@@ -1,29 +1,40 @@
-﻿using AnimalAdoptionCenter.Services.GeneralServices;
+﻿using AnimalAdoptionCenter.Models;
+using AnimalAdoptionCenter.Services.GeneralServices;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using static System.Linq.IQueryable;
 
 namespace AnimalAdoptionCenter.Controllers
 {
     public class CatalogController : Controller
     {
-        //ISearchService _tempData;
-        //public CatalogController(ISearchService tempData)
-        //{
-        //    _tempData = tempData;
-        //}
-        private readonly IRepository _repository;
-        public CatalogController(IRepository repository)
+        IRepository data;
+        ISearchService search;
+        public CatalogController(IRepository data, ISearchService search)
         {
-            _repository = repository;
+            this.data = data;
+            this.search = search;
         }
-
         public IActionResult Index()
         {
-            return View(_repository.GetAnimals());
+            return View(GetAnimals());
         }
-        public IActionResult Search()
+
+        [HttpGet]
+        public IActionResult Index(string userSearching)
         {
-            return View();
+            ViewBag.UserSearching = userSearching;
+            IEnumerable<Animal> list;
+            if (IsValid(userSearching))
+                list = SearchAnimals(userSearching).AsParallel();
+            else
+                list = GetAnimals();
+            return View(list);
         }
+
+        ///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        bool IsValid(string str) => !String.IsNullOrEmpty(str);
+        IEnumerable<Animal> GetAnimals() => data.GetAnimals();
+        IEnumerable<Animal> SearchAnimals(string searchInput) => search.GetAll(searchInput);
+
     }
 }
