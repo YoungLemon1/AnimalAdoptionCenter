@@ -1,92 +1,54 @@
-﻿@model IEnumerable<AnimalAdoptionCenter.Models.Animal>;
-
+﻿@model IEnumerable<AnimalAdoptionCenter.Models.Animal>
+@inject IRepository dataRe
 <head>
     <title>Categories</title>
 </head>
 <body>
-    <h1>Catalog</h1>
-    <section>
-        <form asp-action="Search" asp-controller="Catalog">
-            <div>
-                <input type="search" placeholder="Search..." />
-                <button class="search-button" type="submit">Search</button>
-            </div>
-            <div>
-                <label for="category">Type</label>
-                <select id="category" name="category" required>
-                    <option hidden selected value=""></option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="bird">Bird</option>
-                    <option value="rabbit">Rabbit</option>
-                    <option value="hamster">Hamster</option>
-                    <option value="turtle">Turtle</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div>
-                <label for="searchSubCategory"> Sub Category:</label>
-                <input type="text" id="searchSubCategory" name="searchSubCategory" />
-            </div>
-            <div>
-                <label for="searchSize"> Size: </label>
-                <select name="searchSize" id="searchSize">
-                    @{
-                        for (int i = 0; i < 4; i++)
-                        {
-                                            <option value="enumSizeExample"> size @i </option>
-                        }
-                    }
-                </select>
-            </div>
-            <div>
-                <label for="searchSex"> Sex: </label>
-                <select name="searchSex" id="searchSex">
-                    <option hidden selected value=""></option>
-                    <option value="male">M</option>
-                    <option value="female">F</option>
-                </select>
-            </div>
-            <div>
-                <label for="searchAge"> Age:</label>
-                <input type="number" min="0" max="99" id="searchAge" name="searchAge">
-                @*<input type="range" name="searchAge" id="searchAge">*@
-            </div>
+    <div>
+        <form>
+            <input type="search" placeholder="Name/Age/..."
+                   value="@ViewBag.UserSearching" name="userSearching" />
+            <input type="submit" value="Search" />
+            <a asp-action="Index">Reset</a>
         </form>
-    </section>
-    <hr /> 
-    <section id="animal-profile-display">
-        @{
-            foreach (var animal in Model)
-            {
-                <div class="animal-profile">
-                    <div class="animal-profile-img">
-                        <img alt=" profile picture" src=@animal.ProfileImagePath>
-                    </div>
-                    <table class="animal-profile-content">
-                    <tr>
-                        <th>
-                            <h4>@animal.Name</h4>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            @{
-                                @if(animal.CategoryId == 1 || animal.CategoryId == 2)
-                                {
-                                        <label>Breed: @animal.SubCategory</label>
-                                }
-                                else
-                                {
-                                        <label>Species: @animal.SubCategory</label>
-                                }
-
-                            }
-                            </td>
-                    </tr>
-                    </table>
-                </div>
+    </div>
+    <div style="display:flex">
+        <ul>
+            @{
+                foreach (var c in dataRe.GetCategories())
+                {
+                    <li>
+                        <div class="animal-profile-img">
+                            <img src="@c.ImagePath" alt="@c.Name" />
+                        </div>
+                        <div class="animal-profile-content">
+                            <a asp-action="Index" asp-controller="Catalog"
+                       asp-route-UserSearching="@c.Name"
+                       name="userChoosing">
+                                pick @c.Name 's
+                            </a>
+                        </div>
+                    </li>
+                }
             }
-        }
-    </section>
+        </ul>
+        <ul>
+            @foreach (var animal in Model)
+            {
+                <li class="animal-profile" id="profile" name="profile">
+                    <div class="animal-profile-img">
+                        <img alt=" profile picture" src="@animal.ProfileImagePath">
+                    </div>
+                    <div class="animal-profile-content">
+                        <p>Name: @animal.Name</p>
+                        <p>Age: @animal.Age</p>
+                        <p>size: @animal.Size</p>
+                        <a asp-action="Index" asp-controller="Profile" asp-route-id="@animal.Id">
+                            Go To Profile
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
 </body>

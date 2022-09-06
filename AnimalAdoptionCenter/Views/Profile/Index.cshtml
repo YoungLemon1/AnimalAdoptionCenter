@@ -1,4 +1,6 @@
 ﻿@model AnimalAdoptionCenter.Models.Animal
+@inject AnimalAdoptionCenter.Services.GeneralServices.IGetCommentsService comments
+
 <header>
     <h1>@Model.Name's Profile</h1> <br />
 </header>
@@ -14,14 +16,14 @@
             <td>
                 <h3>Comments:</h3>
                 @{
-                    for (int i = 0; i < 3; i++)
+                    foreach (var comment in @comments.GetComments(Model.Id))
                     {
-                        <p>@i . @Model.Name 's comment</p>
+                        <p>@comment.Customer</p>
+                        <p>@comment.Text</p>
+                        <p>@comment.CreatedDate</p>
                     }
                 }
             </td>
         </tr>
     </table>
 </div>
-
-
