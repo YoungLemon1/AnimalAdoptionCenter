@@ -17,6 +17,7 @@ namespace AnimalAdoptionCenter.Controllers
         public IActionResult Index()
         {
             ViewBag.Categories = _repository.GetCategories();
+            ViewBag.Cities = _repository.GetCities();
             return View();
         }
 

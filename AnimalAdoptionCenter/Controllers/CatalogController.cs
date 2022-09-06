@@ -11,13 +11,19 @@ namespace AnimalAdoptionCenter.Controllers
         //{
         //    _tempData = tempData;
         //}
+        private readonly IRepository _repository;
+        public CatalogController(IRepository repository)
+        {
+            _repository = repository;
+        }
+
         public IActionResult Index()
+        {
+            return View(_repository.GetAnimals());
+        }
+        public IActionResult Search()
         {
             return View();
         }
-        //public IActionResult Search(int id)
-        //{
-        //    return View();
-        //}
     }
 }

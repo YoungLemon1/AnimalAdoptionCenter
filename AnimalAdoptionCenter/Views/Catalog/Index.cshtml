@@ -1,71 +1,92 @@
-﻿<head>
+﻿@model IEnumerable<AnimalAdoptionCenter.Models.Animal>;
+
+<head>
     <title>Categories</title>
 </head>
 <body>
     <h1>Catalog</h1>
-    <div class="catalog">
-        <div>
-            <input type="search" placeholder="Search..." />
-            <button>Search</button>
-        </div>
-        <div>
-            <label for="category">Type</label>
-            <select id="category" name="category" required>
-                <option hidden selected value=""></option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="bird">Bird</option>
-                <option value="rabbit">Rabbit</option>
-                <option value="hamster">Hamster</option>
-                <option value="turtle">Turtle</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <div>
-            <label for="searchSubCategory"> Sub Category:</label>
-            <input type="text" id="searchSubCategory" name="searchSubCategory" />
-        </div>
-        <div>
-            <label for="searchSize"> Size: </label>
-            <select name="searchSize" id="searchSize">
-                @{
-                    for (int i = 0; i < 4; i++)
-                    {
-                                <option value="enumSizeExample"> size @i </option>
+    <section>
+        <form asp-action="Search" asp-controller="Catalog">
+            <div>
+                <input type="search" placeholder="Search..." />
+                <button class="search-button" type="submit">Search</button>
+            </div>
+            <div>
+                <label for="category">Type</label>
+                <select id="category" name="category" required>
+                    <option hidden selected value=""></option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="turtle">Turtle</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="searchSubCategory"> Sub Category:</label>
+                <input type="text" id="searchSubCategory" name="searchSubCategory" />
+            </div>
+            <div>
+                <label for="searchSize"> Size: </label>
+                <select name="searchSize" id="searchSize">
+                    @{
+                        for (int i = 0; i < 4; i++)
+                        {
+                                            <option value="enumSizeExample"> size @i </option>
+                        }
                     }
-                }
-            </select>
-        </div>
-        <div>
-            <label for="searchSex"> Sex: </label>
-            <select name="searchSex" id="searchSex">
-                <option hidden selected value=""></option>
-                <option value="male">M</option>
-                <option value="female">F</option>
-            </select>
-        </div>
-        <div>
-            <label for="searchAge"> Age:</label>
-            <input type="number" min="0" max="99" id="searchAge" name="searchAge">
-            @*<input type="range" name="searchAge" id="searchAge">*@
-        </div>
-    </div>
+                </select>
+            </div>
+            <div>
+                <label for="searchSex"> Sex: </label>
+                <select name="searchSex" id="searchSex">
+                    <option hidden selected value=""></option>
+                    <option value="male">M</option>
+                    <option value="female">F</option>
+                </select>
+            </div>
+            <div>
+                <label for="searchAge"> Age:</label>
+                <input type="number" min="0" max="99" id="searchAge" name="searchAge">
+                @*<input type="range" name="searchAge" id="searchAge">*@
+            </div>
+        </form>
+    </section>
     <hr /> 
-    <div id="animal-profile-display">
+    <section id="animal-profile-display">
         @{
-            for (int i = 0; i < 3; i++)
+            foreach (var animal in Model)
             {
-                    <div class="animal-profile" id="profile@i" name="profile@i">
-                        <div class="animal-profile-img">
-                            <img alt=" profile picture" src="/Images/Animals/Cat1.jpg">
-                        </div>
-                    <div class="animal-profile-content">
-                            <p>Age: 15</p>
-                            <p>size: Small</p>
-                            <button> Profile @i </button>
-                        </div>
+                <div class="animal-profile">
+                    <div class="animal-profile-img">
+                        <img alt=" profile picture" src=@animal.ProfileImagePath>
                     </div>
+                    <table class="animal-profile-content">
+                    <tr>
+                        <th>
+                            <h4>@animal.Name</h4>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @{
+                                @if(animal.CategoryId == 1 || animal.CategoryId == 2)
+                                {
+                                        <label>Breed: @animal.SubCategory</label>
+                                }
+                                else
+                                {
+                                        <label>Species: @animal.SubCategory</label>
+                                }
+
+                            }
+                            </td>
+                    </tr>
+                    </table>
+                </div>
             }
         }
-    </div>
+    </section>
 </body>

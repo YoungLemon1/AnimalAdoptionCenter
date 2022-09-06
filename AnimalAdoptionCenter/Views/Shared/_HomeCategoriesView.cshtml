@@ -1,20 +1,15 @@
 ﻿@inject IRepository repository
 <nav>
-    <ul>
+    <div>
         @{
-            foreach (var category in repository.GetCategories())
+            var categories = repository.GetCategories();
+            foreach (var category in categories)
             {
-                <li>
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="@category.ImagePath" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">
-                                @category.Name
-                            </p>
-                        </div>
-                    </div>
-                </li>
+                <figure class="category-img-figure">
+                <img class="category-img" src="@category.ImagePath" alt="Card image cap">
+                    <figcaption>@category.Name</figcaption>
+                </figure>
             }
         }
-    </ul>
+    </div>
 </nav>

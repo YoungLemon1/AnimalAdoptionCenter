@@ -8,15 +8,22 @@
 @*    @await Html.PartialAsync("_SearchView")
     <hr/>*@
     @*Popular animlals*@
-    <h1>Popular animlals</h1>
+    <section class="stripe">
     @await Html.PartialAsync("_PopularAnimalsView")
+    </section>
     <hr/>
     @*Categories*@
+    <section id="category-card-images" class="stripe">
     <h1>Categories</h1>
     @await Html.PartialAsync("_HomeCategoriesView")
+    </section>
     <hr/>
     @*About us*@
-    <h2>About Us</h2>
-    <div>GoAdopt is an adoption center specializing adoption from a variety of animals</div>
+    <section>
+        <h2>About Us</h2>
+        <div>
+            <p>GoAdopt is an adoption center specializing adoption from a variety of animals</p>
+        </div>
+    </section>
 </body>
 </html>

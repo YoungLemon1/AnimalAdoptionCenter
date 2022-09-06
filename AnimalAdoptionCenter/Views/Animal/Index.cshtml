@@ -8,13 +8,22 @@
             new SelectListItem { Value = category.Id.ToString(), Text = category.Name }
         );
     }
+
+    var cities = new List<SelectListItem>();
+    foreach (var city in ViewBag.Cities)
+    {
+        cities.Add(
+            new SelectListItem { Value = city.Id.ToString(), Text = city.Name }
+        );
+    }
 }
 <head>
     <title>Admin</title>
 </head>
 <body>
     <h1>Admin</h1>
-    <form asp-action="AddAnimal" asp-controller="Animal" id="newAnimalForm" method="post">
+    <scetion>
+    <form asp-action="AddAnimal" asp-controller="Animal" class="form" id="newAnimalForm" method="post">
         <div>
             <h2>Add New Animal</h2>
         </div>
@@ -41,9 +50,23 @@
             <input type="number" min="0" max="99" id="age" asp-for="Age">
         </div>
         <div>
+            <label for="city">City</label>
+            <select id="city" required asp-for="CityId">
+                <option hidden selected value=""></option>
+                @foreach (var item in cities)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
+        </div>
+        <div>
+                <label for="imagePath">Image Path</label>
+                <input type="text" id="imagePath" asp-for="ProfileImagePath"/>
+        </div>
+        <div>
             <label for="sex">Sex</label>
             <select id="sex" required asp-for="Sex"         
-                    asp-items="Html.GetEnumSelectList<eSex>()">
+            asp-items="Html.GetEnumSelectList<eSex>()">
                 <option hidden selected value=""></option>
             </select>
         </div>
@@ -51,6 +74,13 @@
             <label for="size">Size</label>
             <select id="size" required asp-for="Size"
                     asp-items="Html.GetEnumSelectList<eSize>()">
+                <option hidden selected value=""></option>
+            </select>
+        </div>
+        <div>
+            <label for="status">Status</label>
+            <select id="status" required asp-for="Status"
+                    asp-items="Html.GetEnumSelectList<eStatus>()">
                 <option hidden selected value=""></option>
             </select>
         </div>
@@ -72,9 +102,11 @@
             <label id="description-label" for="description">Description</label>
             <textarea id="description" name="description" cols="40" rows="5" maxlength="250"></textarea>
         </div>
-        <div><button id="form-submmission" type="submit">Add animal</button></div>
+        <div><button class="form-submmission" type="submit">Add animal</button></div>
     </form>
+    </scetion>
     <hr />
+    <section>
     <h2>Move Animal to archive</h2>
-
+    </section>
 </body>

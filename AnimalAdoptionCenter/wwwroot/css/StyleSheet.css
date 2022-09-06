@@ -1,12 +1,31 @@
-﻿.templateBody {
+﻿body {
     margin: 0px;
 }
 
-.main-content-wrapper {
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 20px;
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 8px;
+}
+
+section {
+    padding: 12px 20px, 12px, 20px;
+    display: grid;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.stripe {
+    padding: 1rem, 1rem;
+    display: grid;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#category-card-images {
+    background-color: aliceblue;
 }
 
 .navbar {
@@ -25,14 +44,17 @@ nav li {
 
 
 #newAnimalForm {
+    margin: 20px;
     width: max-content;
     background-color: antiquewhite;
     border: 4px groove grey;
-    padding: 8px;
+}
+
+form div {
+    margin: 10px;
 }
 
 form label {
-    margin-right: 10px;
     width: 75px;
     display: inline-block;
 }
@@ -41,21 +63,23 @@ textarea {
     align-self: start;
 }
 
+hr {
+    margin: 0px;
+}
+
 #description-label {
     text-align: left;
     margin-bottom: 8px;
     display: block;
 }
 
-form ul {
-    list-style: none;
+.search-button{
+    display: inline;
+    width: 70px;
+    height: max-content;
 }
 
-form div {
-    margin: 10px;
-}
-
-#form-submmission {
+.form-submmission {
     align-self: baseline;
     margin-top: 8px;
     margin-left: 0px;
@@ -72,12 +96,6 @@ li a {
     text-decoration: none;
 }
 
-
-
-.catalog div {
-    margin: 10px;
-}
-
 .catalog label {
     margin-right: 10px;
     width: 75px;
@@ -88,43 +106,76 @@ li a {
     display: flex;
     flex-wrap: wrap;
     padding: 0px;
-    margin:0px;
-    background-color:darkslategrey;
+    margin: 0px;
+    background-color: darkslategrey;
 }
 
 .animal-profile {
-    width: 20vw;
-    height: 20vw;
+    width: 23vw;
+    height: 23vw;
     margin: 8px;
     padding: 0px;
     background-color: azure;
     border: 4px groove grey;
 }
 
-.animal-profile-content{
+.animal-profile-content {
     padding: 8px;
 }
 
+.animal-profile-content div {
+    display:inline-block;
+}
+
 .animal-profile-img {
-    height: 45%;
+    height: 50%;
     width: 100%;
     border-bottom: 1px solid grey;
 }
 
-.animal-profile-img img {
-    width:100%;
-    height: 100%
-}
+    .animal-profile-img img {
+        width: 100%;
+        height: 100%
+    }
 
-.nonBulletedList ul {
+.non-bulleted-list ul {
     list-style: none
 }
 
-.popularAnimals img {
-    width: 200px;
-    height: 150px;
+.popular-animals {
+    display: inline-block;
+    margin: 10px;
 }
 
-.searchBar{
-    padding:15px;
+figcaption {
+    text-align: center;
+    justify-content: center;
+}
+
+.popular-animal {
+    width: 230px;
+    height: 230px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.category-img-figure {
+    margin: 20px;
+    display: inline-block;
+}
+
+.category-img {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10%;
+    margin: 10px;
+}
+
+.search-bar {
+    padding: 15px;
+}
+
+#about-us {
+    background-color: lightblue;
 }
