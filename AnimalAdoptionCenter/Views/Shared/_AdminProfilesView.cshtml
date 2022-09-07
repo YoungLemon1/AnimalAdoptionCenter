@@ -1,8 +1,8 @@
 ﻿@foreach (var animal in Model)
 {
     <div class="animal-profile" id="profile" name="profile">
-        <div class="animal-profile-img">
-            <img alt="@animal.SubCategory profile picture" src="@animal.ProfileImagePath">
+        <div>
+            <img class="animal-profile-img" alt="@animal.SubCategory profile picture" src="@animal.ProfileImagePath">
         </div>
         <div class="animal-profile-content">
             <header>Name: @animal.Name</header>
@@ -22,7 +22,7 @@
             <p>Sex: @animal.Sex</p>
             <p>Size: @animal.Size</p>
             <p>Status: @animal.Status</p>
-            <form asp-action="Index" asp-controller="Profile" asp-route-id="@animal.Id">
+            <form asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@animal.Id">
                 <button type="submit"> Profile </button>
             </form>
             <form asp-action="Index" asp-controller="Profile" asp-route-id="@animal.Id">

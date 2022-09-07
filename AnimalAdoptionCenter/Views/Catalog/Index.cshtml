@@ -30,12 +30,11 @@
             }
         </ul>
     </nav>
-        <nav id="animal-profile-display">
+        <div class="animal-profile-display">
             @foreach (var animal in Model)
             {
                 @await Html.PartialAsync("_ProfilesView", animal)
             }
-
-        </nav>
+        </div>
     </div>
 </body>

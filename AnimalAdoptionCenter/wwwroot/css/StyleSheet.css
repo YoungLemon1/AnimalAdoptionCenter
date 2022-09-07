@@ -86,7 +86,7 @@ form div {
 }
 
 form label {
-    width: 75px;
+    width: 85px;
     display: inline-block;
 }
 
@@ -118,48 +118,58 @@ hr {
     height: 40px;
 }
 
+form input, select{
+    width: 40%;
+}
+
 .catalog label {
     margin-right: 10px;
     width: 75px;
     display: inline-block;
 }
 
-#animal-profile-display {
+.animal-profile-display {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     padding: 0px;
     margin: 0px;
     background-color: darkslategrey;
 }
 
 .animal-profile {
-    width: 26vw;
-    height: 30vw;
+    width: 220px;
+    height: max-content;
     margin: 8px;
     padding: 0px;
     background-color: azure;
     border: 4px groove grey;
 }
 
+.animal-profile h3 {
+    margin: 0px;
+    padding: 8px;
+}
+
 .animal-profile-content {
-    width: fit-content;
+    height: fit-content;
     padding: 8px;
 }
 
 .animal-profile-content div {
-    display:inline-block;
+    display:flex;
+    flex-wrap:wrap;
 }
 
 .animal-profile-img {
-    height: 50%;
+    height: 180px;
     width: 100%;
     border-bottom: 1px solid grey;
 }
 
-    .animal-profile-img img {
+.animal-profile-img img {
         width: 100%;
-        height: 100%
-    }
+}
 
 .non-bulleted-list ul {
     list-style: none
@@ -184,7 +194,7 @@ figcaption {
 }
 
 .category-img-figure {
-    margin: 20px;
+    margin: 10px;
     display: inline-block;
 }
 
@@ -197,6 +207,10 @@ figcaption {
 
 .search-bar {
     padding: 15px;
+}
+
+.about-us {
+    margin: 10px;
 }
 
 #about-us {

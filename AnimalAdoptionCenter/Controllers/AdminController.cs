@@ -15,6 +15,13 @@ namespace AnimalAdoptionCenter.Controllers
         {
             return View(_repository.GetAnimals());
         }
+        public IActionResult NewAnimalForm()
+        {
+            ViewBag.Categories = _repository.GetCategories();
+            ViewBag.Cities = _repository.GetCities();
+            ViewBag.Animals = _repository.GetAnimals();
+            return View();
+        }
 
         [HttpPost]
         public IActionResult AddAnimal(Animal animal)
