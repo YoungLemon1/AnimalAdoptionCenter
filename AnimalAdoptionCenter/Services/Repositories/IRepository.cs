@@ -9,6 +9,7 @@ public interface IRepository
     IEnumerable<Animal> GetAnimals();
     IEnumerable<Animal> GetPopularAnimals(int num);
     IEnumerable<Animal> GetPopularAnimals();
+    IEnumerable<Animal> GetAdoptableAnimals();
     Animal GetAnimalById(int id);
     Animal GetAnimalByName(string name);
     void InsertAnimal(Animal animal);
@@ -34,6 +35,7 @@ public interface IRepository
     void DeleteCustomer(Customer customer);
     //Comment
     IEnumerable<Comment> GetComments();
+    Comment GetCommentById(int id);
     void InsertComment(Comment comment, Animal animal);
     void UpdateComment(int id, Comment comment);
     void DeleteComment(Comment comment);

@@ -1,8 +1,6 @@
 ﻿using AnimalAdoptionCenter.Data;
 using AnimalAdoptionCenter.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using AnimalAdoptionCenter.Models.Enums;
 
 namespace AnimalAdoptionCenter.Services.Repositories
 {
@@ -18,14 +16,17 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             return _context.Animals!;
         }
-        public Animal GetAnimalById(int id)
+        Animal IRepository.GetAnimalById(int id)
         {
-            return _context.Animals!.Single(animal => animal.Id == id);
+            return _context.Animals!.Single(a => a.Id == id);
         }
-
-        public Animal GetAnimalByName(string name)
+        Animal IRepository.GetAnimalByName(string name)
         {
-            return _context.Animals!.Single(animal => animal.Name == name);
+            return _context.Animals!.Single(a => a.Name == name);
+        }
+        IEnumerable<Animal> IRepository.GetAdoptableAnimals()
+        {
+            return _context.Animals!.Where(a => a.Status == eStatus.Ready_For_Adoption);
         }
         IEnumerable<Animal> IRepository.GetPopularAnimals(int num)
         {
@@ -59,6 +60,7 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             return _context.Comments!;
         }
+        Comment IRepository.GetCommentById(int id) => _context.Comments!.Single(c => c.Id == id);
         IEnumerable<Customer> IRepository.GetCustomers()
         {
             return _context.Customers!;
@@ -69,8 +71,15 @@ namespace AnimalAdoptionCenter.Services.Repositories
         }
         void IRepository.InsertAnimal(Animal animal)
         {
-            _context.Animals!.Add(animal);
-            _context.SaveChanges();
+            try
+            {
+                _context.Animals!.Add(animal);
+                _context.SaveChanges();
+            }
+            catch
+            {
+                return;
+            }
         }
         void IRepository.InsertCategory(Category category)
         {
@@ -85,7 +94,6 @@ namespace AnimalAdoptionCenter.Services.Repositories
         void IRepository.InsertComment(Comment comment, Animal animal)
         {
             _context.Comments!.Add(comment);
-            animal = GetAnimalById(comment.AnimalId);
             animal.Comments!.Add(comment);
             _context.SaveChanges();
         }
@@ -164,16 +172,6 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             _context.SubCategories!.Remove(subCategory);
             _context.SaveChanges();
-        }
-
-        Animal IRepository.GetAnimalById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Animal IRepository.GetAnimalByName(string name)
-        {
-            throw new NotImplementedException();
         }
     }
 }

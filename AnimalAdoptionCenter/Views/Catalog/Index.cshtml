@@ -13,42 +13,29 @@
         </form>
     </div>
     <div style="display:flex">
+    <nav class="navbar navbar-vertical">
         <ul>
             @{
-                foreach (var c in dataRe.GetCategories())
+                foreach (var category in dataRe.GetCategories())
                 {
                     <li>
-                        <div class="animal-profile-img">
-                            <img src="@c.ImagePath" alt="@c.Name" />
-                        </div>
-                        <div class="animal-profile-content">
-                            <a asp-action="Index" asp-controller="Catalog"
-                       asp-route-UserSearching="@c.Name"
-                       name="userChoosing">
-                                pick @c.Name 's
-                            </a>
-                        </div>
+                        <a asp-action="Index" asp-controller="Catalog" asp-route-UserSearching="@category.Name" name="userChoosing">
+                            <figure class="category-img-figure">
+                                <img class="category-img" src="@category.ImagePath" alt="Card image cap">
+                                <figcaption>@category.Name</figcaption>
+                            </figure>
+                        </a>
                     </li>
                 }
             }
         </ul>
-        <ul>
+    </nav>
+        <nav id="animal-profile-display">
             @foreach (var animal in Model)
             {
-                <li class="animal-profile" id="profile" name="profile">
-                    <div class="animal-profile-img">
-                        <img alt=" profile picture" src="@animal.ProfileImagePath">
-                    </div>
-                    <div class="animal-profile-content">
-                        <p>Name: @animal.Name</p>
-                        <p>Age: @animal.Age</p>
-                        <p>size: @animal.Size</p>
-                        <a asp-action="Index" asp-controller="Profile" asp-route-id="@animal.Id">
-                            Go To Profile
-                        </a>
-                    </div>
-                </li>
+                @await Html.PartialAsync("_ProfilesView", animal)
             }
-        </ul>
+
+        </nav>
     </div>
 </body>

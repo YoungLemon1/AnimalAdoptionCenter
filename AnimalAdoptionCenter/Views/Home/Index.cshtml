@@ -1,29 +1,29 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title>Home</title>
-</head>
-<body>
-    @*Search-Bar*@
-@*    @await Html.PartialAsync("_SearchView")
-    <hr/>*@
-    @*Popular animlals*@
-    <section class="stripe">
-    @await Html.PartialAsync("_PopularAnimalsView")
-    </section>
-    <hr/>
-    @*Categories*@
-    <section id="category-card-images" class="stripe">
-    <h1>Categories</h1>
-    @await Html.PartialAsync("_HomeCategoriesView")
-    </section>
-    <hr/>
-    @*About us*@
-    <section>
-        <h2>About Us</h2>
-        <div>
-            <p>GoAdopt is an adoption center specializing adoption from a variety of animals</p>
-        </div>
-    </section>
-</body>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        @*Search-Bar*@
+    @*    @await Html.PartialAsync("_SearchView")
+        <hr/>*@
+        @*Popular animlals*@
+        <section class="stripe">
+        @await Html.PartialAsync("_PopularAnimalsView")
+        </section>
+        <hr/>
+        @*Categories*@
+        <section id="category-card-images" class="stripe">
+        <h1>Categories</h1>
+        @await Html.PartialAsync("_HomeCategoriesView")
+        </section>
+        <hr/>
+        @*About us*@
+        <section>
+            <h2>About Us</h2>
+            <div>
+                <p>GoAdopt is an adoption center specializing adoption from a variety of animals</p>
+            </div>
+        </section>
+    </body>
 </html>

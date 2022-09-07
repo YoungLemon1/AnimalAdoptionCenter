@@ -28,18 +28,49 @@ section {
     background-color: aliceblue;
 }
 
+
 .navbar {
-    list-style: none;
-    background-color: black;
+    padding: 10px;
 }
 
-nav ul {
+.navbar-horizontal {
+    background-color: darkcyan;
+}
+
+.navbar-vertical {
+    background-color: midnightblue;
+}
+
+.navbar ul {
     list-style: none;
     margin: 0px;
 }
 
-nav li {
+.navbar-horizontal ul {
     display: inline-block;
+}
+.navbar-vertical ul {
+    display: block;
+    margin:10px;
+    padding-inline-start:0px;
+}
+
+.navbar-horizontal ul li {
+    display: inline-block;
+
+}
+
+.navbar-vertical ul li {
+    display: block;
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: large;
+    padding: 8px;
+    text-decoration: none;
 }
 
 
@@ -87,15 +118,6 @@ hr {
     height: 40px;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    font-size: large;
-    padding: 8px;
-    text-decoration: none;
-}
-
 .catalog label {
     margin-right: 10px;
     width: 75px;
@@ -111,8 +133,8 @@ li a {
 }
 
 .animal-profile {
-    width: 23vw;
-    height: 23vw;
+    width: 26vw;
+    height: 30vw;
     margin: 8px;
     padding: 0px;
     background-color: azure;
@@ -120,6 +142,7 @@ li a {
 }
 
 .animal-profile-content {
+    width: fit-content;
     padding: 8px;
 }
 

@@ -1,0 +1,16 @@
+﻿@model AnimalAdoptionCenter.Models.Animal
+
+<div class="animal-profile" id="profile" name="profile">
+    <div class="animal-profile-img">
+        <img alt=" profile" src="@Model.ProfileImagePath">
+    </div>
+    <h3>@Model.Name</h3>
+    <div class="animal-profile-content">
+        <p>Age: @Model.Age</p>
+        <p>Sex: @Model.Sex</p>
+        <p>Size: @Model.Size</p>
+        <form asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@Model.Id">
+            <button type="submit"> Go To Profile</button>
+        </form>
+    </div>
+</div>

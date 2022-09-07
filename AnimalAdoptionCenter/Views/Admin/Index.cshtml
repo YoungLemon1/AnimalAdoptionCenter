@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AnimalAdoptionCenter.Models.Animal>
+<section>
+    <div>
+        <h2>Archive</h2>
+    </div>
+    <div>
+        @foreach (var animal in Model)
+        {
+            <div class="animal-profile" id="profile" name="profile">
+                <div class="animal-profile-img">
+                    <img alt="@animal.SubCategory profile picture" src="@animal.ProfileImagePath">
+                </div>
+                <div class="animal-profile-content">
+                    <header>Name: @animal.Name</header>
+                    <p>Id: @animal.Id</p>
+                    @{
+                        @if (animal.CategoryId == 1 || animal.CategoryId == 2)
+                        {
+                            <p>Breed: @animal.SubCategory</p>
+                        }
+                        else
+                        {
+                            <p>Species: @animal.SubCategory</p>
+                        }
+
+                    }
+                    <p>Age: @animal.Age</p>
+                    <p>Sex: @animal.Sex</p>
+                    <p>Size: @animal.Size</p>
+                    <p>Status: @animal.Status</p>
+                    <button asp-action="Index" asp-controller="Profile" asp-route-id="@animal.Id">
+                        Go To Profile
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+</section>

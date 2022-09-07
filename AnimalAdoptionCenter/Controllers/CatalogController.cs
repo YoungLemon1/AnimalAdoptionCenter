@@ -16,7 +16,7 @@ namespace AnimalAdoptionCenter.Controllers
         }
         public IActionResult Index()
         {
-            return View(GetAnimals());
+            return View(data.GetAdoptableAnimals());
         }
 
         [HttpGet]
@@ -33,7 +33,7 @@ namespace AnimalAdoptionCenter.Controllers
 
         ///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         bool IsValid(string str) => !String.IsNullOrEmpty(str);
-        IEnumerable<Animal> GetAnimals() => data.GetAnimals();
+        IEnumerable<Animal> GetAnimals() => data.GetAdoptableAnimals();
         IEnumerable<Animal> SearchAnimals(string searchInput) => search.GetAll(searchInput);
 
     }

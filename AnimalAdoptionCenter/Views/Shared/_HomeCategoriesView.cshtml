@@ -1,14 +1,16 @@
 ﻿@inject IRepository repository
-<nav>
+<nav class="navbar navbar-horizontal">
     <div>
         @{
             var categories = repository.GetCategories();
             foreach (var category in categories)
             {
+                <a asp-action="Index" asp-controller="Catalog" asp-route-UserSearching="@category.Name" name="userChoosing">
                 <figure class="category-img-figure">
                 <img class="category-img" src="@category.ImagePath" alt="Card image cap">
                     <figcaption>@category.Name</figcaption>
                 </figure>
+                </a>
             }
         }
     </div>

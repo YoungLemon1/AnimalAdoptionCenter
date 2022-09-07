@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace AnimalAdoptionCenter.Controllers
 {
-    public class ProfileController : Controller
+    public class AnimalProfileController : Controller
     {
         readonly IRepository _repository;
-        public ProfileController(IRepository repository) => _repository = repository;
+        public AnimalProfileController(IRepository repository) => _repository = repository;
         public IActionResult Index(int id)
         {
             Animal animal = _repository.GetAnimalById(id);

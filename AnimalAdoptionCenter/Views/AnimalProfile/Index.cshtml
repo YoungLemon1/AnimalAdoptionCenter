@@ -1,0 +1,67 @@
+﻿@model AnimalAdoptionCenter.Models.Animal
+@inject AnimalAdoptionCenter.Services.GeneralServices.CommentsServices.IGetCommentsService comments
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ProfilePage: @Model.Name</title>
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>@Model.Name's Profile</h1> 
+            </header>
+        </div>
+        <div>
+            <img class="animal-profile-img" src="@Model.ProfileImagePath" /> <br />
+            <table>
+                <tr>
+                    <th>Age:</th>
+                    <td>@Model.Age</td>
+                </tr>
+                <tr>
+                    <th>Sex:</th>
+                    <td>@Model.Sex</td>
+                </tr>
+                <tr>
+                    <th>Size:</th>
+                    <td>@Model.Size</td>
+                </tr>
+                <tr>
+                    @{
+                        @if (Model.CategoryId == 1 || Model.CategoryId == 2)
+                        {
+                            <th>Breed:</th>
+                        }
+                        else
+                        {
+                            <th>Species</th>
+                        }
+                    }
+                    <td>
+                        @Model.SubCategory
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description:</th>
+                    <td>@Model.Description</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Comments:</h3>
+                        @{
+                            var animalCommentsList = comments.GetComments(Model.Id).ToList();
+                            foreach (var comment in animalCommentsList)
+                            {
+                                var customerName = comments.GetCustomerByComment(comment.Id).Name;
+                                <p>@customerName</p>
+                                <p>@comment.CreatedDate</p>
+                                <p>@comment.Text</p>
+                            }
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

@@ -9,10 +9,12 @@
         foreach(var animal in popularAnimals)
         {
             string categoryName = repository.GetCategoryById(animal.CategoryId).Name!;
-            <figure class="popular-animals">
-            <img class="popular-animal" src="@animal.ProfileImagePath" alt="Popular animal: A @animal.SubCategory @categoryName named @animal.Name"/>
-            <figcaption>@animal.Name, @animal.SubCategory, @animal.Age</figcaption>
-            </figure>
+            <a asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@animal.Id">
+                <figure class="popular-animals">
+                <img class="popular-animal" src="@animal.ProfileImagePath" alt="Popular animal: A @animal.SubCategory @categoryName named @animal.Name"/>
+                <figcaption>@animal.Name, @animal.SubCategory, @animal.Age</figcaption>
+                </figure>
+            </a>
         }
     }
     </div>

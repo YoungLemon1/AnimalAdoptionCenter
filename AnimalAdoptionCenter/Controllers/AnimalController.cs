@@ -18,6 +18,7 @@ namespace AnimalAdoptionCenter.Controllers
         {
             ViewBag.Categories = _repository.GetCategories();
             ViewBag.Cities = _repository.GetCities();
+            ViewBag.Animals = _repository.GetAnimals();
             return View();
         }
 
@@ -28,14 +29,16 @@ namespace AnimalAdoptionCenter.Controllers
             return RedirectToAction("Index");
         }
 
-        //public IActionResult DeleteAnimal(Animal animal)
-        //{
-        //    _repository.DeleteAnimalAnimal(animal);
-        //}
+        public IActionResult DeleteAnimal(Animal animal)
+        {
+            _repository.DeleteAnimal(animal);
+            return View();
+        }
 
-        //public IActionResult UpdateAnimal(Animal animal)
-        //{
-        //    _repository.UpdateAnimal(animal);
-        //}
+        public IActionResult UpdateAnimal(int id, Animal animal)
+        {
+            _repository.UpdateAnimal(id, animal);
+            return View();
+        }
     }
 }

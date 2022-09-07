@@ -11,12 +11,12 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         public SearchService(IRepository data)
         {
             this.data = data;
-            animalList = data.GetAnimals();
+            animalList = data.GetAdoptableAnimals();
         }
         public IEnumerable<Animal> animalList { get; set; }
 
         public IEnumerable<Animal> GetAll(string input) =>
-            !String.IsNullOrEmpty(input) ? SearchAll(input.ToLower()) : data.GetAnimals();
+            !String.IsNullOrEmpty(input) ? SearchAll(input.ToLower()) : animalList;
 
         public IEnumerable<Animal> SearchAll(string input)
         {
@@ -40,7 +40,7 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         {
             var categories = data.GetCategories().Where(c => c.Name!.ToLower().Contains(typeName));
             var animals = new List<Animal>();
-            var animalsData = data.GetAnimals().ToList();
+            var animalsData = animalList.ToList();
             foreach (var category in categories)
                 animals.AddRange(animalsData.Where(a => a.CategoryId == category.Id));
             return GroupByAll(animals);
