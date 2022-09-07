@@ -115,6 +115,7 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             var animalInDb = _context.Animals!.Single(m => m.Id == id);
 
+            animalInDb.CategoryId = animal.CategoryId;
             animalInDb.Age = animal.Age;
             animalInDb.CityId = animal.CityId;
             animalInDb.Sex = animal.Sex;

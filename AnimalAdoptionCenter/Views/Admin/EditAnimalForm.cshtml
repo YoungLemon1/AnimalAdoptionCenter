@@ -27,7 +27,7 @@
     <scetion>
         <form asp-action="UpdateAnimal" class="form" id="EditAnimalForm" method="post" asp-route-id="@Model.Id">
             <div>
-                <img src="@Model.ProfileImagePath" />
+                <img class="animal-profile-img" src="@Model.ProfileImagePath" />
             </div>
             <div>
                 <h2>Edit Animal</h2>
@@ -111,7 +111,7 @@
                 <label id="description-label" for="description">Description</label>
                 <textarea id="description" name="description" cols="40" rows="5" maxlength="250">@Model.Description</textarea>
             </div>
-            <div><button class="form-submmission" type="submit">Save changes</button></div>
+            <div><button class="form-submmission" type="submit">Save Changes</button></div>
         </form>
     </scetion>
     <hr />
