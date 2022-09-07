@@ -19,16 +19,17 @@
 
             }
             <p>Age: @animal.Age</p>
+            <p>City: @animal.City</p>
             <p>Sex: @animal.Sex</p>
             <p>Size: @animal.Size</p>
             <p>Status: @animal.Status</p>
             <form asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@animal.Id">
                 <button type="submit"> Profile </button>
             </form>
-            <form asp-action="Index" asp-controller="Profile" asp-route-id="@animal.Id">
+            <form asp-action="EditAnimalForm" asp-route-id="@animal.Id">
                 <button type="submit"> Edit </button>
             </form>
-            <form asp-action="Index" asp-controller="Profile" asp-route-id="@animal.Id">
+            <form asp-action="DeleteAnimal" asp-route-id="@animal.Id">
                 <button type="submit"> Delete </button>
             </form>
         </div>

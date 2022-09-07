@@ -23,23 +23,33 @@ namespace AnimalAdoptionCenter.Controllers
             return View();
         }
 
+        public IActionResult EditAnimalForm(int id)
+        {
+            ViewBag.Categories = _repository.GetCategories();
+            ViewBag.Cities = _repository.GetCities();
+            ViewBag.Animals = _repository.GetAnimals();
+            Animal animal = _repository.GetAnimalById(id);
+            return View(animal);
+        }
+
         [HttpPost]
         public IActionResult AddAnimal(Animal animal)
         {
             _repository.InsertAnimal(animal);
             return RedirectToAction("Index");
         }
-
-        public IActionResult DeleteAnimal(Animal animal)
+        [HttpPost]
+        public IActionResult DeleteAnimal(int id)
         {
+            Animal animal = _repository.GetAnimalById(id);
             _repository.DeleteAnimal(animal);
-            return View();
+            return RedirectToAction("Index");
         }
-
-        public IActionResult UpdateAnimal(int id, Animal animal)
+        [HttpPost]
+        public IActionResult UpdateAnimal(Animal animal, int id)
         {
             _repository.UpdateAnimal(id, animal);
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

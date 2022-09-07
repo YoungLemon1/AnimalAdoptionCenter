@@ -81,6 +81,13 @@ section {
     border: 4px groove grey;
 }
 
+#EditAnimalForm {
+    margin: 20px;
+    width: max-content;
+    background-color: aquamarine;
+    border: 4px groove grey;
+}
+
 form div {
     margin: 10px;
 }

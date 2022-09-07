@@ -56,6 +56,10 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             return _context.Cities!;
         }
+        City IRepository.GetCityById(int id)
+        {
+            return _context.Cities!.Single(c => c.Id == id);
+        }
         IEnumerable<Comment> IRepository.GetComments()
         {
             return _context.Comments!;
@@ -110,7 +114,8 @@ namespace AnimalAdoptionCenter.Services.Repositories
         void IRepository.UpdateAnimal(int id, Animal animal)
         {
             var animalInDb = _context.Animals!.Single(m => m.Id == id);
-            animalInDb = animal;
+
+            animalInDb.Age = animal.Age;
             _context.SaveChanges();
         }
         void IRepository.UpdateCategory(int id, Category category)

@@ -19,15 +19,22 @@
     }
 }
 <head>
-    <title>Add New Animal</title>
+    <title>Edit Animal Form</title>
     <script src="/javascript/Ajax-Form-Notify.js"> </script>
 </head>
 <body>
     <section><h1>Admin</h1></section>
     <scetion>
-        <form asp-action="AddAnimal" class="form" id="newAnimalForm" method="post" onsubmit="return ajaxpost()">
+        <form asp-action="UpdateAnimal" class="form" id="EditAnimalForm" method="post" asp-route-id="@Model.Id">
             <div>
-                <h2>Add New Animal</h2>
+                <img src="@Model.ProfileImagePath" />
+            </div>
+            <div>
+                <h2>Edit Animal</h2>
+            </div>
+            <div>
+                <label for="id">ID</label>
+                <input id="id" type="text" disabled value="@Model.Id"/>
             </div>
             <div>
                 <label for="category">Type</label>
@@ -102,11 +109,10 @@
             </section>
             <div>
                 <label id="description-label" for="description">Description</label>
-                <textarea id="description" name="description" cols="40" rows="5" maxlength="250"></textarea>
+                <textarea id="description" name="description" cols="40" rows="5" maxlength="250">@Model.Description</textarea>
             </div>
-            <div><button class="form-submmission" type="submit">Add animal</button></div>
+            <div><button class="form-submmission" type="submit">Save changes</button></div>
         </form>
     </scetion>
-
     <hr />
 </body>

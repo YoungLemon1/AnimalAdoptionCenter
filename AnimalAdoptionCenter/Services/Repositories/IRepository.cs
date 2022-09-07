@@ -25,6 +25,7 @@ public interface IRepository
     void DeleteCategory(Category category);
     //City
     IEnumerable<City> GetCities();
+    City GetCityById(int id);
     void InsertCity(City city);
     void UpdateCity(int id, City city);
     void DeleteCity(City city);
