@@ -27,8 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Services\GeneralServices\CommentsServices\GetCommentsService.cs" />
-    <Compile Include="Services\GeneralServices\CommentsServices\IGetCommentsService.cs" />
+    <Compile Include="Services\GeneralServices\CommentsServices\CommentsService.cs" />
+    <Compile Include="Services\GeneralServices\CommentsServices\ICommentsService.cs" />
     <Compile Include="Services\GeneralServices\ISearchService.cs" />
     <Compile Include="Services\GeneralServices\SearchService.cs" />
     <Compile Include="Services\Repositories\DataRepository.cs" />

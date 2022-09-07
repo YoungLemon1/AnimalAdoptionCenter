@@ -2,10 +2,10 @@
 
 namespace AnimalAdoptionCenter.Services.GeneralServices.CommentsServices
 {
-    public class GetCommentsService : IGetCommentsService
+    public class CommentsService : ICommentsService
     {
         IRepository data;
-        public GetCommentsService(IRepository data) => this.data = data;
+        public CommentsService(IRepository data) => this.data = data;
         public IEnumerable<Comment> GetComments(int animalId) =>
             data.GetComments().Where(c => c.AnimalId == animalId);
         public Customer GetCustomerByComment(int commentID) 

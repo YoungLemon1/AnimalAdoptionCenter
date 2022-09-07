@@ -2,7 +2,7 @@
 
 namespace AnimalAdoptionCenter.Services.GeneralServices.CommentsServices
 {
-    public interface IGetCommentsService
+    public interface ICommentsService
     {
         IEnumerable<Comment> GetComments(int animalId);
         Customer GetCustomerByComment(int commentID);

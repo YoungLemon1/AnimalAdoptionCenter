@@ -10,7 +10,7 @@ using AnimalAdoptionCenter.Services.GeneralServices.CommentsServices;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IRepository, DataRepository>();
 builder.Services.AddTransient<ISearchService, SearchService>();
-builder.Services.AddTransient<IGetCommentsService, GetCommentsService>();
+builder.Services.AddTransient<ICommentsService, CommentsService>();
 //builder.Services.AddDbContext<AnimalAdoptionCenterContext>(options => options.UseSqlite("Data Source=C:\\temp\\AnimalAdoptionCenterDb.db"));
 string connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
 builder.Services.AddDbContext<AACContext>(options => options.UseSqlServer(connectionString));
