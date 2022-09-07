@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AnimalAdoptionCenter.Models;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace AnimalAdoptionCenter.Controllers
@@ -13,6 +14,25 @@ namespace AnimalAdoptionCenter.Controllers
         public IActionResult Index()
         {
             return View(_repository.GetAnimals());
+        }
+
+        [HttpPost]
+        public IActionResult AddAnimal(Animal animal)
+        {
+            _repository.InsertAnimal(animal);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteAnimal(Animal animal)
+        {
+            _repository.DeleteAnimal(animal);
+            return View();
+        }
+
+        public IActionResult UpdateAnimal(int id, Animal animal)
+        {
+            _repository.UpdateAnimal(id, animal);
+            return View();
         }
     }
 }

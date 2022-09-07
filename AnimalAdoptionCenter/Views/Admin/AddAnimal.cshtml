@@ -62,13 +62,13 @@
                 </select>
             </div>
             <div>
-                    <label for="imagePath">Image Path</label>
-                    <input type="text" id="imagePath" asp-for="ProfileImagePath"/>
+                <label for="imagePath">Image Path</label>
+                <input type="text" id="imagePath" asp-for="ProfileImagePath" />
             </div>
             <div>
                 <label for="sex">Sex</label>
-                <select id="sex" required asp-for="Sex"         
-                asp-items="Html.GetEnumSelectList<eSex>()">
+                <select id="sex" required asp-for="Sex"
+                        asp-items="Html.GetEnumSelectList<eSex>()">
                     <option hidden selected value=""></option>
                 </select>
             </div>

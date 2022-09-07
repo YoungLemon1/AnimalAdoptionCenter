@@ -36,11 +36,12 @@ namespace AnimalAdoptionCenter.Data
                 );
             
             modelBuilder.Entity<Customer>().HasData(
-                new Customer { Id = 1, Name = "Yakov Izkovich" },
-                new Customer { Id = 2, Name = "Eli Chohen" },
-                new Customer { Id = 3, Name = "Reut Saban" },
-                new Customer { Id = 4, Name = "Yotam Even" },
-                new Customer { Id = 5, Name = "Yael Sharon" });
+                new Customer { Id = 1, Name = "Offer Levi" },
+                new Customer { Id = 2, Name = "Yakov Izkovich" },
+                new Customer { Id = 3, Name = "Eli Chohen" },
+                new Customer { Id = 4, Name = "Reut Saban" },
+                new Customer { Id = 5, Name = "Yotam Even" },
+                new Customer { Id = 6, Name = "Yael Sharon" });
 
             modelBuilder.Entity<Animal>().HasData(
                 new Animal { Id = 1,  CategoryId = 1, SubCategory = "Labrador", Name = "Poli", Age = 2, CityId = 1, Sex = eSex.Male, Size = eSize.Small, Status = eStatus.Ready_For_Adoption, IsVaccinated = true, IsTrained = true, IsSterilized = false, ProfileImagePath= "\\Images\\Animals\\Poli.jpg", Description = "Very energetic" },
@@ -58,7 +59,7 @@ namespace AnimalAdoptionCenter.Data
                 new Comment { Id = 2, AnimalId = 1, CustomerId = 3, CreatedDate = new DateTime(2020, 3, 3).Date, Text = "How adorable" },
                 new Comment { Id = 3, AnimalId = 2, CustomerId = 2, CreatedDate = new DateTime(2019, 12, 22).Date, Text = "Very Cute" },
                 new Comment { Id = 4, AnimalId = 2, CustomerId = 4, CreatedDate = new DateTime(2020, 2, 23).Date, Text = "Precius" },
-                new Comment { Id = 5, AnimalId = 3, CustomerId = 1, CreatedDate = new DateTime(2020, 2, 22).Date, Text = "Can she talk?" },
+                new Comment { Id = 5, AnimalId = 3, CustomerId = 4, CreatedDate = new DateTime(2020, 2, 22).Date, Text = "Can she talk?" },
                 new Comment { Id = 6, AnimalId = 5, CustomerId = 5, CreatedDate = new DateTime(2020, 3, 23).Date, Text = "Floof!" }
                 ) ;
         }
