@@ -16,7 +16,8 @@ namespace AnimalAdoptionCenter.Controllers
         }
         public IActionResult Index()
         {
-            return View(data.GetAdoptableAnimals());
+            var animalProfiles = data.GetAdoptableAnimals().ToList();
+            return View(animalProfiles);
         }
 
         [HttpGet]
@@ -25,9 +26,9 @@ namespace AnimalAdoptionCenter.Controllers
             ViewBag.UserSearching = userSearching;
             IEnumerable<Animal> list;
             if (IsValid(userSearching))
-                list = SearchAnimals(userSearching).AsParallel();
+                list = SearchAnimals(userSearching).AsParallel().ToList();
             else
-                list = GetAnimals();
+                list = GetAnimals().ToList();
             return View(list);
         }
 

@@ -1,14 +1,26 @@
 ﻿@model AnimalAdoptionCenter.Models.Animal
+@inject IRepository repository
 
 <div class="animal-profile" id="profile" name="profile">
     <div >
         <img class="animal-profile-img" alt="profile" src="@Model.ProfileImagePath">
     </div>
+    @{
+        string cityName = repository.GetCityById(Model.CityId).Name!;
+        var resV = Model.IsVaccinated ? "Yes" : "No";
+        var resS = Model.IsSterilized ? "Yes" : "No";
+        var resT = Model.IsTrained ? "Yes" : "No";
+    }
     <h3>@Model.Name</h3>
     <div class="animal-profile-content">
         <p>Age: @Model.Age</p>
+        <p>City: @cityName</p>
         <p>Sex: @Model.Sex</p>
         <p>Size: @Model.Size</p>
+        <p>Status: @Model.Status</p>
+        <p>Vaccinated: @resV </p>
+        <p>Sterilized: @resS</p>
+        <p>Trained: @resT</p>
         <form asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@Model.Id">
             <button type="submit"> Profile</button>
         </form>

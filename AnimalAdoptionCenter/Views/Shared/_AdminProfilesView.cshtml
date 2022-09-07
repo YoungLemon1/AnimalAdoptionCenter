@@ -1,4 +1,6 @@
-﻿@foreach (var animal in Model)
+﻿@using AnimalAdoptionCenter.Models
+@inject IRepository repository
+@foreach (Animal animal in Model)
 {
     <div class="animal-profile" id="profile" name="profile">
         <div>
@@ -8,21 +10,29 @@
             <header>Name: @animal.Name</header>
             <p>Id: @animal.Id</p>
             @{
-                @if (animal.CategoryId == 1 || animal.CategoryId == 2)
+                string resSC;
+                if (animal.CategoryId == 1 || animal.CategoryId == 2)
                 {
-                    <p>Breed: @animal.SubCategory</p>
+                    resSC = "Breed";
                 }
                 else
                 {
-                    <p>Species: @animal.SubCategory</p>
+                    resSC = "Species";
                 }
-
+                string cityName = repository.GetCityById(animal.CityId).Name!;
+                var resS = animal.IsSterilized ? "Yes" : "No";
+                var resT = animal.IsTrained ? "Yes" : "No";
+                var resV = animal.IsVaccinated ? "Yes" : "No";
             }
+            <p>@resSC: @animal.SubCategory</p>
             <p>Age: @animal.Age</p>
-            <p>City: @animal.City</p>
+            <p>City: @cityName</p>
             <p>Sex: @animal.Sex</p>
             <p>Size: @animal.Size</p>
             <p>Status: @animal.Status</p>
+            <p>Vaccinated: @resV </p>
+            <p>Sterilized: @resS</p>
+            <p>Trained: @resT</p>
             <form asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@animal.Id">
                 <button type="submit"> Profile </button>
             </form>

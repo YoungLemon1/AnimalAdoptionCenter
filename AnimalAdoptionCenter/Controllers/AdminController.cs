@@ -13,7 +13,8 @@ namespace AnimalAdoptionCenter.Controllers
         }
         public IActionResult Index()
         {
-            return View(_repository.GetAnimals());
+            var animals = _repository.GetAnimals().ToList();
+            return View(animals);
         }
         public IActionResult NewAnimalForm()
         {

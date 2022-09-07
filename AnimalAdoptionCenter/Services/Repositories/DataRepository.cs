@@ -116,6 +116,15 @@ namespace AnimalAdoptionCenter.Services.Repositories
             var animalInDb = _context.Animals!.Single(m => m.Id == id);
 
             animalInDb.Age = animal.Age;
+            animalInDb.CityId = animal.CityId;
+            animalInDb.Sex = animal.Sex;
+            animalInDb.Size = animal.Size;
+            animalInDb.Status = animal.Status;
+            animalInDb.IsVaccinated = animal.IsVaccinated;
+            animalInDb.IsSterilized = animal.IsSterilized;
+            animalInDb.IsTrained = animal.IsTrained;
+            animalInDb.Description = animal.Description;
+            animalInDb.ProfileImagePath = animal.ProfileImagePath;
             _context.SaveChanges();
         }
         void IRepository.UpdateCategory(int id, Category category)
