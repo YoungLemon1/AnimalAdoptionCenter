@@ -1,5 +1,7 @@
 ﻿@using AnimalAdoptionCenter.Models
 @using AnimalAdoptionCenter.Models.Enums;
+@using System.Reflection;
+@using System.ComponentModel.DataAnnotations;
 @inject IRepository repository
 @foreach (Animal animal in Model)
 {
@@ -24,13 +26,14 @@
                 var resS = animal.IsSterilized ? "Yes" : "No";
                 var resT = animal.IsTrained ? "Yes" : "No";
                 var resV = animal.IsVaccinated ? "Yes" : "No";
-            }
+                var statusDisplayName = animal.Status.GetAttribute<DisplayAttribute>().Name;
+        }
             <p>@resSC: @animal.SubCategory</p>
             <p>Age: @animal.Age</p>
             <p>City: @cityName</p>
             <p>Sex: @animal.Sex</p>
             <p>Size: @animal.Size</p>
-            <p>Status: @animal.Status</p>
+            <p>Status: @statusDisplayName</p>
             <p>Vaccinated: @resV </p>
             <p>Sterilized: @resS</p>
             <p>Trained: @resT</p>

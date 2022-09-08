@@ -23,6 +23,7 @@
     <script src="/javascript/Ajax-Form-Notify.js"> </script>
 </head>
 <body>
+    <scetion>
         <form asp-action="UpdateAnimal" class="form" id="EditAnimalForm" method="post" asp-route-id="@Model.Id">
             <div>
                 <img class="animal-profile-img" src="@Model.ProfileImagePath" />
@@ -112,5 +113,4 @@
             <div><button class="form-submmission" type="submit">Save Changes</button></div>
         </form>
     </scetion>
-    <hr />
 </body>
