@@ -198,6 +198,23 @@ namespace AnimalAdoptionCenter.Data
                     IsTrained = false,
                     IsSterilized = false,
                     ProfileImagePath = "https://a-z-animals.com/media/2021/11/tree-frog.jpg"
+                },
+                new Animal
+                {
+                    Id = 10,
+                    CategoryId = 4,
+                    SubCategory = "Snake, Bird, Snail...",
+                    Name = "Sanfrost",
+                    Age = 5,
+                    CityId = 4,
+                    Sex = eSex.Male,
+                    Size = eSize.Medium,
+                    Status = eStatus.Missing,
+                    IsVaccinated = false,
+                    IsTrained = false,
+                    IsSterilized = false,
+                    ProfileImagePath = "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,w_500/751875",
+                    Description = "Animals went missing from bag"
                 }
                 );
 
