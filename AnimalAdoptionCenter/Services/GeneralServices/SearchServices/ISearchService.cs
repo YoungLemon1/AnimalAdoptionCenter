@@ -2,7 +2,7 @@
 using AnimalAdoptionCenter.Models.Enums;
 using System.Collections.Generic;
 
-namespace AnimalAdoptionCenter.Services.GeneralServices
+namespace AnimalAdoptionCenter.Services.GeneralServices.SearchServices
 {
     public interface ISearchService
     {

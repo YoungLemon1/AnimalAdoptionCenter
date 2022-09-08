@@ -3,7 +3,7 @@ using AnimalAdoptionCenter.Services.Repositories;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AnimalAdoptionCenter.Services.GeneralServices
+namespace AnimalAdoptionCenter.Services.GeneralServices.SearchServices
 {
     public class SearchService : ISearchService
     {
@@ -16,7 +16,7 @@ namespace AnimalAdoptionCenter.Services.GeneralServices
         public IEnumerable<Animal> animalList { get; set; }
 
         public IEnumerable<Animal> GetAll(string input) =>
-            !String.IsNullOrEmpty(input) ? SearchAll(input.ToLower()) : animalList;
+            !string.IsNullOrEmpty(input) ? SearchAll(input.ToLower()) : animalList;
 
         public IEnumerable<Animal> SearchAll(string input)
         {

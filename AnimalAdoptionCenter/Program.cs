@@ -2,10 +2,10 @@ global using AnimalAdoptionCenter.Services.Repositories;
 using AnimalAdoptionCenter.Data;
 using Microsoft.EntityFrameworkCore;
 using AnimalAdoptionCenter.Services;
-using AnimalAdoptionCenter.Services.GeneralServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using AnimalAdoptionCenter.Services.GeneralServices.CommentsServices;
+using AnimalAdoptionCenter.Services.GeneralServices.SearchServices;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IRepository, DataRepository>();

@@ -1,5 +1,5 @@
 ﻿using AnimalAdoptionCenter.Models;
-using AnimalAdoptionCenter.Services.GeneralServices;
+using AnimalAdoptionCenter.Services.GeneralServices.SearchServices;
 using Microsoft.AspNetCore.Mvc;
 using static System.Linq.IQueryable;
 
