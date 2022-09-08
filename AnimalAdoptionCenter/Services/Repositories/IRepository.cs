@@ -37,7 +37,7 @@ public interface IRepository
     //Comment
     IEnumerable<Comment> GetComments();
     Comment GetCommentById(int id);
-    void InsertComment(Comment comment, Animal animal);
+    Comment InsertComment(Comment comment, Animal animal);
     void UpdateComment(int id, Comment comment);
     void DeleteComment(Comment comment);
     //SubCategory

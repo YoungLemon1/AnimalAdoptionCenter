@@ -17,6 +17,24 @@ section {
     min-height: 100%;
 }
 
+#comment-section {
+    
+}
+
+#comment-section div 
+{
+    margin : 15px;
+}
+
+#comment-box
+{
+    width : 60%;
+}
+
+#comment-send-button {
+    width: 20%;
+}
+
 .stripe {
     padding: 1rem, 1rem;
     display: grid;
@@ -92,6 +110,10 @@ form div {
     margin: 10px;
 }
 
+form button {
+    margin-right: 10px;
+}
+
 form label {
     width: 85px;
     display: inline-block;
@@ -129,6 +151,14 @@ form input, select{
     width: 40%;
 }
 
+.title {
+    font-weight: bolder;
+}
+
+.secondery-title {
+    font-weight: bold;
+}
+
 .catalog label {
     margin-right: 10px;
     width: 75px;
@@ -142,6 +172,15 @@ form input, select{
     padding: 0px;
     margin: 0px;
     background-color: darkslategrey;
+}
+
+.animal-profile-view-display {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: bisque;
 }
 
 .animal-profile {

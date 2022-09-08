@@ -7,8 +7,8 @@
             <img class="animal-profile-img" alt="@animal.SubCategory profile picture" src="@animal.ProfileImagePath">
         </div>
         <div class="animal-profile-content">
-            <header>Name: @animal.Name</header>
-            <p>Id: @animal.Id</p>
+            <header class="title">Name: @animal.Name</header>
+            <p class="secondery-title">Id: @animal.Id</p>
             @{
                 string resSC;
                 if (animal.CategoryId == 1 || animal.CategoryId == 2)
@@ -33,15 +33,23 @@
             <p>Vaccinated: @resV </p>
             <p>Sterilized: @resS</p>
             <p>Trained: @resT</p>
-            <form asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@animal.Id">
-                <button type="submit"> Profile </button>
-            </form>
-            <form asp-action="EditAnimalForm" asp-route-id="@animal.Id">
-                <button type="submit"> Edit </button>
-            </form>
-            <form asp-action="DeleteAnimal" asp-route-id="@animal.Id">
-                <button type="submit"> Delete </button>
-            </form>
+            <div>
+                <span>
+                    <form asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@animal.Id">
+                        <button type="submit"> Profile </button>
+                    </form>
+                </span>
+                <span>
+                    <form asp-action="EditAnimalForm" asp-route-id="@animal.Id">
+                        <button type="submit"> Edit </button>
+                    </form>
+                </span>
+                <span>
+                    <form asp-action="DeleteAnimal" asp-route-id="@animal.Id" onsubmit="return confirm('Are you sure you want to delete this profile?');">
+                        <button type="submit"> Delete </button>
+                    </form>
+                </span>
+            </div>
         </div>
     </div>
 }

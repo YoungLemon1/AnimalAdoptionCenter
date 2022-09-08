@@ -1,5 +1,6 @@
 ﻿@model AnimalAdoptionCenter.Models.Animal
 @inject AnimalAdoptionCenter.Services.GeneralServices.CommentsServices.ICommentsService comments
+@inject IRepository repository
 
 <!DOCTYPE html>
 <html>
@@ -12,8 +13,10 @@
                 <h1>@Model.Name's Profile</h1> 
             </header>
         </div>
-        <div>
-            <img class="animal-profile-img" src="@Model.ProfileImagePath" /> <br />
+    <div class="animal-profile-view-display">
+            <div class="animal-profile">
+                <img class="animal-profile-img" src="@Model.ProfileImagePath" /> <br />
+            </div>
             <table>
                 <tr>
                     <th>Age:</th>
@@ -28,40 +31,52 @@
                     <td>@Model.Size</td>
                 </tr>
                 <tr>
-                    @{
-                        @if (Model.CategoryId == 1 || Model.CategoryId == 2)
-                        {
-                            <th>Breed:</th>
-                        }
-                        else
-                        {
-                            <th>Species</th>
-                        }
+                @{
+                    string resSC;
+                    if (Model.CategoryId == 1 || Model.CategoryId == 2)
+                    {
+                        resSC = "Breed";
                     }
-                    <td>
-                        @Model.SubCategory
-                    </td>
+                    else
+                    {
+                        resSC = "Species";
+                    }
+                    string cityName = repository.GetCityById(Model.CityId).Name!;
+                    var resS = Model.IsSterilized ? "Yes" : "No";
+                    var resT = Model.IsTrained ? "Yes" : "No";
+                    var resV = Model.IsVaccinated ? "Yes" : "No";
+                }
+                    <th> @Model.SubCategory:</th>
+                    <td> @resSC</td>
                 </tr>
                 <tr>
                     <th>Description:</th>
                     <td>@Model.Description</td>
                 </tr>
-                <tr>
-                    <td>
-                        <h3>Comments:</h3>
-                        @{
-                            var animalCommentsList = comments.GetComments(Model.Id).ToList();
-                            foreach (var comment in animalCommentsList)
-                            {
-                                var customerName = comments.GetCustomerByComment(comment.Id).Name;
-                                <p>@customerName</p>
-                                <p>@comment.CreatedDate</p>
-                                <p>@comment.Text</p>
-                            }
-                        }
-                    </td>
-                </tr>
             </table>
         </div>
+    <h3>Comments:</h3>
+    <section id="comment-section">
+        <div>
+            <form data-id="@Model.Id" asp-controller="AnimalProfile" asp-action="AddComment" method="post">
+                <input id="comment-box" name="text" type="text" placeholder="Enter Comment Here.." />
+                <input value="@Model.Id" name="id" hidden = "hidden"/>
+                <input id="comment-send-button" type="submit" value="Send" />
+            </form>
+        </div>
+    @{
+        var animalCommentsList = comments.GetComments(Model.Id).ToList();
+        foreach (var comment in animalCommentsList)
+        {
+            var customerName = comments.GetCustomerByComment(comment.Id).Name;
+                <hr/>
+                <div>
+                    <p>@customerName</p>
+                    <p>@comment.CreatedDate</p>
+                    <p>@comment.Text</p>
+                </div>
+        }
+    }
+    </section>
     </body>
 </html>

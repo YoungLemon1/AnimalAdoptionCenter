@@ -6,5 +6,6 @@ namespace AnimalAdoptionCenter.Services.GeneralServices.CommentsServices
     {
         IEnumerable<Comment> GetComments(int animalId);
         Customer GetCustomerByComment(int commentID);
+        void InsertAdminComment(int id, string text);
     }
 }
