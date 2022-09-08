@@ -44,6 +44,12 @@ section {
 
 #category-card-images {
     background-color: aliceblue;
+    text-decoration: none;
+}
+
+#category-card-images a{
+    color: white;
+    text-decoration:none;
 }
 
 
@@ -221,22 +227,29 @@ form input, select{
     list-style: none
 }
 
-.popular-animals {
+#popular-animals {
     display: inline-block;
     margin: 10px;
+}
+
+#popular-animals a {
+    text-decoration: none;
+    color: dimgray;
+}
+
+#popular-animal {
+    width: 230px;
+    height: 230px;
+    color: dimgrey;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
 }
 
 figcaption {
     text-align: center;
     justify-content: center;
-}
-
-.popular-animal {
-    width: 230px;
-    height: 230px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
 }
 
 .category-img-figure {
@@ -252,7 +265,7 @@ figcaption {
 }
 
 .search-bar {
-    padding: 15px;
+    width:80px;
 }
 
 .about-us {

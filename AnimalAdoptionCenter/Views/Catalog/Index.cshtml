@@ -5,11 +5,13 @@
 </head>
 <body>
     <div>
-        <form>
+        <form >
             <input type="search" placeholder="Name/Age/..."
                    value="@ViewBag.UserSearching" name="userSearching" />
-            <input type="submit" value="Search" />
-            <a asp-action="Index">Reset</a>
+            <input class="search-bar" type="submit" value="Search" />
+            <form asp-action="Index">
+                <button type="submit">Reset</button>
+            </form>
         </form>
     </div>
     <div style="display:flex">

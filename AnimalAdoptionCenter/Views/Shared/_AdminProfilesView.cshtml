@@ -13,22 +13,18 @@
             <header class="title">Name: @animal.Name</header>
             <p class="secondery-title">Id: @animal.Id</p>
             @{
-                string resSC;
-                if (animal.CategoryId == 1 || animal.CategoryId == 2)
-                {
-                    resSC = "Breed";
-                }
-                else
-                {
-                    resSC = "Species";
-                }
                 string cityName = repository.GetCityById(animal.CityId).Name!;
                 var resS = animal.IsSterilized ? "Yes" : "No";
                 var resT = animal.IsTrained ? "Yes" : "No";
                 var resV = animal.IsVaccinated ? "Yes" : "No";
                 var statusDisplayName = animal.Status.GetAttribute<DisplayAttribute>().Name;
-        }
-            <p>@resSC: @animal.SubCategory</p>
+                }
+            <p>
+                @{
+                    var subC = animal.CategoryId.Equals(1) || animal.CategoryId.Equals(2) ? "Breed" : "Species";
+                }
+                @subC: @animal.SubCategory
+            </p>
             <p>Age: @animal.Age</p>
             <p>City: @cityName</p>
             <p>Sex: @animal.Sex</p>

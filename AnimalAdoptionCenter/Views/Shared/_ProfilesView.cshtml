@@ -13,11 +13,17 @@
     }
     <h3>@Model.Name</h3>
     <div class="animal-profile-content">
+        <p>
+            @{
+                var subC = Model.Category!.Id.Equals(1) || Model.Category!.Id.Equals(2) ? "Breed" : "Species";
+            }
+            @subC: @Model.SubCategory
+        </p>
         <p>Age: @Model.Age</p>
         <p>City: @cityName</p>
         <p>Sex: @Model.Sex</p>
         <p>Size: @Model.Size</p>
-        <p>Status: @Model.Status.ToString()</p>
+        <p>Status: @Model.Status</p>
         <p>Vaccinated: @resV </p>
         <p>Sterilized: @resS</p>
         <p>Trained: @resT</p>

@@ -1,21 +1,21 @@
 ﻿@inject IRepository repository
 @model AnimalAdoptionCenter.Models.Animal;
 
-<div class="popularAnimals">
+<div>
     <h2>Popular Animals</h2>
-    <div class="categories">
-    @{
-        var popularAnimals = repository.GetPopularAnimals().ToList();
-        foreach(var animal in popularAnimals)
-        {
-            string categoryName = repository.GetCategoryById(animal.CategoryId).Name!;
-            <a asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@animal.Id">
-                <figure class="popular-animals">
-                <img class="popular-animal" src="@animal.ProfileImagePath" alt="Popular animal: A @animal.SubCategory @categoryName named @animal.Name"/>
-                <figcaption>@animal.Name, @animal.SubCategory, @animal.Age</figcaption>
-                </figure>
-            </a>
+    <div id="popular-animals">
+        @{
+            var popularAnimals = repository.GetPopularAnimals().ToList();
+            foreach(var animal in popularAnimals)
+            {
+                string categoryName = repository.GetCategoryById(animal.CategoryId).Name!;
+                <a asp-action="Index" asp-controller="AnimalProfile" asp-route-id="@animal.Id">
+                    <figure id="popular-animals">
+                        <img id="popular-animal" src="@animal.ProfileImagePath" alt="Popular animal: A @animal.SubCategory @categoryName named @animal.Name"/>
+                        <figcaption>@animal.Name, @animal.SubCategory, @animal.Age</figcaption>
+                    </figure>
+                </a>
+            }
         }
-    }
     </div>
 </div>
