@@ -26,7 +26,7 @@ namespace AnimalAdoptionCenter.Controllers
         public IActionResult AddComment(int id, string text)
         {
             _commentsService.InsertAdminComment(id, text);
-            return RedirectToAction("Index", id);
+            return Redirect($"/AnimalProfile/Index/{id}");
         }
     }
 }

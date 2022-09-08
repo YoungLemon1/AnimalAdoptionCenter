@@ -49,6 +49,7 @@ namespace AnimalAdoptionCenter.Data
                     Id = 1,
                     CategoryId = 1,
                     SubCategory = "Labrador",
+                    CustomerId = null,
                     Name = "Poli",
                     Age = 2, CityId = 1,
                     Sex = eSex.Male,
@@ -60,121 +61,130 @@ namespace AnimalAdoptionCenter.Data
                     ProfileImagePath= "\\Images\\Animals\\Poli.jpg",
                     Description = "Very energetic"
                 },
-                new Animal 
-                { 
-                    Id = 2, 
-                    CategoryId = 2, 
-                    SubCategory = "Siamese", 
-                    Name = "Lara", 
-                    Age = 6, CityId = 2, 
-                    Sex = eSex.Female, 
-                    Size = eSize.Medium, 
-                    Status = eStatus.Ready_For_Adoption, 
-                    IsVaccinated = true, 
-                    IsTrained = true, 
-                    IsSterilized = true, 
-                    ProfileImagePath = "\\Images\\Animals\\Lara.jpg", 
-                    Description = "Quiet and shy" 
-                },
-                new Animal 
-                { 
-                    Id = 3, 
-                    CategoryId = 3, 
-                    SubCategory = "Parrot", 
-                    Name = "Lucy", Age = 13, 
-                    CityId = 4, Sex = 
-                    eSex.Female, Size = 
-                    eSize.Small, Status = 
-                    eStatus.Injured, 
-                    IsVaccinated = true, 
-                    IsTrained = true, 
-                    IsSterilized = false, 
-                    ProfileImagePath = "\\Images\\Animals\\Lucy.jpg", 
-                    Description = "Found with a broken wing" 
-                },
-                new Animal 
-                { 
-                    Id = 4, 
-                    CategoryId = 1, 
-                    SubCategory = "Buldog", 
-                    Name = "Woofer", Age = 4, 
-                    CityId = 3, 
-                    Sex = eSex.Male,
-                    Size = eSize.Medium, 
-                    Status = eStatus.In_Rehab, 
-                    IsVaccinated = true, 
-                    IsTrained = false, 
-                    IsSterilized = false, 
-                    ProfileImagePath = "\\Images\\Animals\\Woofer.jpg", 
-                    Description = "Was given to the shelter by his owner due to aggresive behavior. Further training required" 
-                },
-                new Animal 
-                { 
-                    Id = 5, 
-                    CategoryId = 2, 
-                    SubCategory = "Persian",
-                    Name = "Eli",
-                    Age = 9, CityId = 1,
+                new Animal
+                {
+                    Id = 2,
+                    CategoryId = 2,
+                    SubCategory = "Siamese",
+                    Name = "Lara",
+                    Age = 6,
+                    CityId = 2,
                     Sex = eSex.Female,
-                    Size = eSize.Tiny, 
+                    Size = eSize.Medium,
                     Status = eStatus.Ready_For_Adoption,
-                    IsVaccinated = true, IsTrained = true, 
+                    IsVaccinated = true,
+                    IsTrained = true,
                     IsSterilized = true,
-                    ProfileImagePath = "\\Images\\Animals\\Eli.jpg", 
-                    Description = "Found abandoned in the streets, this cat loves playing with toys and is looking for a family" 
+                    ProfileImagePath = "\\Images\\Animals\\Lara.jpg",
+                    Description = "Quiet and shy"
                 },
                 new Animal
-                { 
-                    Id = 6, 
-                    CategoryId = 1, 
+                {
+                    Id = 3,
+                    CategoryId = 3,
+                    SubCategory = "Parrot",
+                    Name = "Lucy",
+                    Age = 13,
+                    CityId = 4,
+                    Sex =
+                    eSex.Female,
+                    Size =
+                    eSize.Small,
+                    Status =
+                    eStatus.Injured,
+                    IsVaccinated = true,
+                    IsTrained = true,
+                    IsSterilized = false,
+                    ProfileImagePath = "\\Images\\Animals\\Lucy.jpg",
+                    Description = "Found with a broken wing"
+                },
+                new Animal
+                {
+                    Id = 4,
+                    CategoryId = 1,
+                    SubCategory = "Buldog",
+                    Name = "Woofer",
+                    Age = 4,
+                    CityId = 3,
+                    Sex = eSex.Male,
+                    Size = eSize.Medium,
+                    Status = eStatus.In_Rehab,
+                    IsVaccinated = true,
+                    IsTrained = false,
+                    IsSterilized = false,
+                    ProfileImagePath = "\\Images\\Animals\\Woofer.jpg",
+                    Description = "Was given to the shelter by his owner due to aggresive behavior. Further training required"
+                },
+                new Animal
+                {
+                    Id = 5,
+                    CategoryId = 2,
+                    SubCategory = "Persian",
+                    Name = "Eli",
+                    Age = 9,
+                    CityId = 1,
+                    Sex = eSex.Female,
+                    Size = eSize.Tiny,
+                    Status = eStatus.Ready_For_Adoption,
+                    IsVaccinated = true,
+                    IsTrained = true,
+                    IsSterilized = true,
+                    ProfileImagePath = "\\Images\\Animals\\Eli.jpg",
+                    Description = "Found abandoned in the streets, this cat loves playing with toys and is looking for a family"
+                },
+                new Animal
+                {
+                    Id = 6,
+                    CategoryId = 1,
                     SubCategory = "Husky",
                     Name = "Sheleg",
-                    Age = 2, 
+                    Age = 2,
                     CityId = 2,
                     Sex = eSex.Male,
                     Size = eSize.Medium,
-                    Status = eStatus.Ready_For_Adoption, 
-                    IsVaccinated = true, 
+                    Status = eStatus.Ready_For_Adoption,
+                    IsVaccinated = true,
                     IsTrained = true,
                     IsSterilized = false,
-                    ProfileImagePath = "\\Images\\Animals\\Sheleg.jpg", 
-                    Description = "Very energetic and talkative" 
+                    ProfileImagePath = "\\Images\\Animals\\Sheleg.jpg",
+                    Description = "Very energetic and talkative"
                 },
-                new Animal 
-                { 
-                    Id = 7, 
-                    CategoryId = 1, 
+                new Animal
+                {
+                    Id = 7,
+                    CategoryId = 1,
                     SubCategory = "Pitbul",
                     Name = "Kasper",
-                    Age = 3, 
-                    CityId = 3, 
-                    Sex = eSex.Male, 
+                    Age = 3,
+                    CityId = 3,
+                    Sex = eSex.Male,
                     Size = eSize.Medium,
                     Status = eStatus.In_Rehab,
-                    IsVaccinated = true, 
-                    IsTrained = true, 
+                    IsVaccinated = true,
+                    IsTrained = true,
                     IsSterilized = true,
-                    ProfileImagePath = "\\Images\\Animals\\Kasper.jpg", 
-                    Description = "A real baby" 
+                    ProfileImagePath = "\\Images\\Animals\\Kasper.jpg",
+                    Description = "A real baby"
                 },
-                new Animal { 
-                    Id = 8, 
+                new Animal
+                {
+                    Id = 8,
                     CategoryId = 3,
                     SubCategory = "Parrot",
-                    Name = "Yusuf", 
+                    Name = "Yusuf",
                     Age = 23,
-                    CityId = 4, 
+                    CityId = 4,
                     Sex = eSex.Male,
                     Size = eSize.Small,
                     Status = eStatus.Ready_For_Adoption,
                     IsVaccinated = true,
-                    IsTrained = true, 
-                    IsSterilized = false, 
+                    IsTrained = true,
+                    IsSterilized = false,
                     ProfileImagePath = "\\Images\\Animals\\Asi.jpg",
-                    Description = "Very friendly parrot, fitting for small houses" 
+                    Description = "Very friendly parrot, fitting for small houses"
                 },
-                new Animal 
-                { 
+                new Animal
+                {
                     Id = 9,
                     CategoryId = 4,
                     SubCategory = "Frog",
@@ -188,7 +198,8 @@ namespace AnimalAdoptionCenter.Data
                     IsTrained = false,
                     IsSterilized = false,
                     ProfileImagePath = "https://a-z-animals.com/media/2021/11/tree-frog.jpg"
-                });
+                }
+                );
 
             modelBuilder.Entity<Comment>().HasData(
                 new Comment 

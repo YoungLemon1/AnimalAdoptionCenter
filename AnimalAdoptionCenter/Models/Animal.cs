@@ -21,8 +21,8 @@ namespace AnimalAdoptionCenter.Models
         public bool IsVaccinated { get; set; }
         public bool IsSterilized { get; set; }
         public bool IsTrained { get; set; }
-        //public int CustomerId { get; set; }
-        //public Customer? Customer { get; set; }
+        public int? CustomerId { get; set; }
+        public Customer? Customer { get; set; }
         public string? Description { get; set; }
         public ICollection<Comment>? Comments { get; set; }
     }

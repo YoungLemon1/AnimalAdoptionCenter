@@ -18,7 +18,7 @@ namespace AnimalAdoptionCenter.Services.GeneralServices.CommentsServices
         public void InsertAdminComment(int id, string text)
         {
             Animal animal = data.GetAnimalById(id);
-            data.InsertComment(new Comment { CustomerId = 10, AnimalId = id, CreatedDate = DateTime.Now, Text = text }, animal);
+            data.InsertComment(new Comment { CustomerId = 1, AnimalId = id, CreatedDate = DateTime.Now, Text = text }, animal);
         }
     }
 }

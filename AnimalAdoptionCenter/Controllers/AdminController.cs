@@ -47,7 +47,7 @@ namespace AnimalAdoptionCenter.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public IActionResult UpdateAnimal(Animal animal, int id)
+        public IActionResult UpdateAnimal(int id, Animal animal)
         {
             _repository.UpdateAnimal(id, animal);
             return RedirectToAction("Index");

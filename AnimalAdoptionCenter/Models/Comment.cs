@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MessagePack;
+using System;
 
 namespace AnimalAdoptionCenter.Models
 {

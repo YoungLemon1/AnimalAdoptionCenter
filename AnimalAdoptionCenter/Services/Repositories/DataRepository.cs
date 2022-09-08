@@ -95,11 +95,10 @@ namespace AnimalAdoptionCenter.Services.Repositories
             _context.Cities!.Add(city);
             _context.SaveChanges();
         }
-        Comment IRepository.InsertComment(Comment comment, Animal animal)
+        void IRepository.InsertComment(Comment comment, Animal animal)
         {
             _context.Comments!.Add(comment);
             _context.SaveChanges();
-            return comment;
         }
         void IRepository.InsertCustomer(Customer customer)
         {
