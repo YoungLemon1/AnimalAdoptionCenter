@@ -8,8 +8,6 @@ namespace AnimalAdoptionCenter.Models
         public string? Name { get; set; }
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
-        //public int SubCategoryId { get; set; }
-        //public SubCategory? SubCategory { get; set; }
         public string? SubCategory { get; set; }
         public string? ProfileImagePath { get; set; }
         public int Age { get; set; }

@@ -1,7 +1,4 @@
-﻿using MessagePack;
-using System;
-
-namespace AnimalAdoptionCenter.Models
+﻿namespace AnimalAdoptionCenter.Models
 {
     public class Comment
     {
