@@ -215,7 +215,7 @@ namespace AnimalAdoptionCenter.Data
                     Id = 2, 
                     AnimalId = 1, 
                     CustomerId = 3,
-                    CreatedDate = new DateTime(2020, 3, 3).Date, 
+                    CreatedDate = new DateTime(2020, 3, 3), 
                     Text = "How adorable"
                 },
                 new Comment 
@@ -223,7 +223,7 @@ namespace AnimalAdoptionCenter.Data
                     Id = 3, 
                     AnimalId = 2,
                     CustomerId = 2,
-                    CreatedDate = new DateTime(2019, 12, 22).Date,
+                    CreatedDate = new DateTime(2019, 12, 22),
                     Text = "Very Cute" 
                 },
                 new Comment 
@@ -231,7 +231,7 @@ namespace AnimalAdoptionCenter.Data
                     Id = 4,
                     AnimalId = 2, 
                     CustomerId = 4, 
-                    CreatedDate = new DateTime(2020, 2, 23).Date, 
+                    CreatedDate = new DateTime(2020, 2, 23), 
                     Text = "Precius" 
                 },
                 new Comment 
@@ -239,7 +239,7 @@ namespace AnimalAdoptionCenter.Data
                     Id = 5,
                     AnimalId = 3, 
                     CustomerId = 4, 
-                    CreatedDate = new DateTime(2020, 2, 22).Date,
+                    CreatedDate = new DateTime(2020, 2, 22),
                     Text = "Can she talk?"
                 },
                 new Comment 
@@ -247,7 +247,7 @@ namespace AnimalAdoptionCenter.Data
                     Id = 6,
                     AnimalId = 5, 
                     CustomerId = 5,
-                    CreatedDate = new DateTime(2020, 3, 23).Date,
+                    CreatedDate = new DateTime(2020, 3, 23),
                     Text = "Floof!" 
                 });
         }

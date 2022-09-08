@@ -1,7 +1,6 @@
 ﻿@model AnimalAdoptionCenter.Models.Animal
 @inject AnimalAdoptionCenter.Services.GeneralServices.CommentsServices.ICommentsService comments
 @inject IRepository repository
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,10 +68,11 @@
         foreach (var comment in animalCommentsList)
         {
             var customerName = comments.GetCustomerByComment(comment.Id).Name;
+                var shortDate = Html.DisplayFor(modelItem => comment.CreatedDate);
                 <hr/>
                 <div>
                     <p>@customerName</p>
-                    <p>@comment.CreatedDate</p>
+                    <p>@shortDate</p>
                     <p>@comment.Text</p>
                 </div>
         }
