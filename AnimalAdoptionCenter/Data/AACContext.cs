@@ -11,7 +11,7 @@ namespace AnimalAdoptionCenter.Data
         }
         public virtual DbSet<Animal>? Animals { get; set; }
         public virtual DbSet<Category>? Categories { get; set; }
-        public virtual DbSet<SubCategory>? SubCategories { get; set; }
+        //public virtual DbSet<SubCategory>? SubCategories { get; set; }
         public virtual DbSet<Customer>? Customers { get; set; }
         public virtual DbSet<City>? Cities { get; set; }
         public virtual DbSet<Comment>? Comments { get; set; }

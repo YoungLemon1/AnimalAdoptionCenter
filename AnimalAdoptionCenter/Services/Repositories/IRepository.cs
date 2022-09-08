@@ -40,9 +40,4 @@ public interface IRepository
     void InsertComment(Comment comment, Animal animal);
     void UpdateComment(int id, Comment comment);
     void DeleteComment(Comment comment);
-    //SubCategory
-    IEnumerable<SubCategory> GetSubCategories();
-    void InsertSubCategory(SubCategory subCategory);
-    void UpdateSubCategory(int id, SubCategory subCategory);
-    void DeleteSubCategory(SubCategory subCategory);
 }

@@ -69,10 +69,6 @@ namespace AnimalAdoptionCenter.Services.Repositories
         {
             return _context.Customers!;
         }
-        IEnumerable<SubCategory> IRepository.GetSubCategories()
-        {
-            return _context.SubCategories!;
-        }
         void IRepository.InsertAnimal(Animal animal)
         {
             try
@@ -103,11 +99,6 @@ namespace AnimalAdoptionCenter.Services.Repositories
         void IRepository.InsertCustomer(Customer customer)
         {
             _context.Customers!.Add(customer);
-            _context.SaveChanges();
-        }
-        void IRepository.InsertSubCategory(SubCategory subCategory)
-        {
-            _context.SubCategories!.Add(subCategory);
             _context.SaveChanges();
         }
         void IRepository.UpdateAnimal(int id, Animal animal)
@@ -151,12 +142,6 @@ namespace AnimalAdoptionCenter.Services.Repositories
             commentInDb = customer;
             _context.SaveChanges();
         }
-        void IRepository.UpdateSubCategory(int id, SubCategory subCategory)
-        {
-            var subCategoryInDb = _context.SubCategories!.Single(m => m.Id == id);
-            subCategoryInDb = subCategory;
-            _context.SaveChanges();
-        }
         void IRepository.DeleteAnimal(Animal animal)
         {
             _context.Animals!.Remove(animal);
@@ -180,11 +165,6 @@ namespace AnimalAdoptionCenter.Services.Repositories
         void IRepository.DeleteCustomer(Customer customer)
         {
             _context.Customers!.Remove(customer);
-            _context.SaveChanges();
-        }
-        void IRepository.DeleteSubCategory(SubCategory subCategory)
-        {
-            _context.SubCategories!.Remove(subCategory);
             _context.SaveChanges();
         }
     }
