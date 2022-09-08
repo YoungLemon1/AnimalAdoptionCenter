@@ -257,7 +257,7 @@ namespace AnimalAdoptionCenter.Data
                     AnimalId = 8, 
                     CustomerId = 4, 
                     CreatedDate = new DateTime(2020, 2, 22),
-                    Text = "Can she talk?"
+                    Text = "Can he talk?"
                 },
                 new Comment 
                 {
