@@ -31,22 +31,14 @@
                 </tr>
                 <tr>
                 @{
-                    string resSC;
-                    if (Model.CategoryId == 1 || Model.CategoryId == 2)
-                    {
-                        resSC = "Breed";
-                    }
-                    else
-                    {
-                        resSC = "Species";
-                    }
+                    string subC = Model.CategoryId.Equals(1) || Model.CategoryId.Equals(2) ? "Breed" : "Species";
                     string cityName = repository.GetCityById(Model.CityId).Name!;
-                    var resS = Model.IsSterilized ? "Yes" : "No";
-                    var resT = Model.IsTrained ? "Yes" : "No";
-                    var resV = Model.IsVaccinated ? "Yes" : "No";
+                    string resS = Model.IsSterilized ? "Yes" : "No";
+                    string resT = Model.IsTrained ? "Yes" : "No";
+                    string resV = Model.IsVaccinated ? "Yes" : "No";
                 }
-                    <th> @Model.SubCategory:</th>
-                    <td> @resSC</td>
+                    <th> @subC:</th>
+                    <td> @Model.SubCategory </td>
                 </tr>
                 <tr>
                     <th>Description:</th>

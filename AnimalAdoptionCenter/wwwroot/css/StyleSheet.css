@@ -150,7 +150,7 @@ hr {
     margin-top: 8px;
     margin-left: 0px;
     width: 100px;
-    height: 40px;
+    height: 60px;
 }
 
 form input, select{
@@ -190,7 +190,7 @@ form input, select{
 }
 
 .animal-profile {
-    width: 220px;
+    width: 260px;
     height: max-content;
     margin: 8px;
     padding: 0px;
