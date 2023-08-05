@@ -5,38 +5,38 @@
 </head>
 <body>
     <div>
-        <form >
+        <form class="d-inline">
             <input type="search" placeholder="Name/Age/..."
                    value="@ViewBag.UserSearching" name="userSearching" />
             <input class="search-bar" type="submit" value="Search" />
-            <form asp-action="Index">
-                <button type="submit">Reset</button>
-            </form>
+        </form>
+        <form class="d-inline" asp-action="Index" method="get">
+            <button type="submit">Reset</button>
         </form>
     </div>
     <div style="display:flex">
-    <nav class="navbar navbar-vertical">
-        <ul>
-            @{
-                foreach (var category in dataRe.GetCategories())
-                {
-                    <li>
-                        <a asp-action="Index" asp-controller="Catalog" asp-route-UserSearching="@category.Name" name="userChoosing">
-                            <figure class="category-img-figure">
-                                <img class="category-img" src="@category.ImagePath" alt="Card image cap">
-                                <figcaption>@category.Name</figcaption>
-                            </figure>
-                        </a>
-                    </li>
+        <nav class="navbar navbar-vertical">
+            <ul>
+                @{
+                    foreach (var category in dataRe.GetCategories())
+                    {
+                        <li>
+                            <a asp-action="Index" asp-controller="Catalog" asp-route-UserSearching="@category.Name" name="userChoosing">
+                                <figure class="category-img-figure">
+                                    <img class="category-img" src="@category.ImagePath" alt="Card image cap">
+                                    <figcaption>@category.Name</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    }
                 }
-            }
-        </ul>
-    </nav>
-        <div class="animal-profile-display">
-            @foreach (var animal in Model)
-            {
-                @await Html.PartialAsync("_ProfilesView", animal)
-            }
-        </div>
+            </ul>
+        </nav>
+            <div class="animal-profile-display">
+                @foreach (var animal in Model)
+                {
+                    @await Html.PartialAsync("_ProfilesView", animal)
+                }
+            </div>
     </div>
 </body>

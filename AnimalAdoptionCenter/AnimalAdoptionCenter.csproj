@@ -51,10 +51,11 @@
     <None Include="wwwroot\Images\Animals\Dog2.png" />
   </ItemGroup>
 
+
   <ItemGroup>
-    <Content Update="wwwroot\lib\pictures\animals\Cat1.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="wwwroot\lib\" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>

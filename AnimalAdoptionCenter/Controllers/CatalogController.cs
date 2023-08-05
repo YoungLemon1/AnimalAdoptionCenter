@@ -32,7 +32,6 @@ namespace AnimalAdoptionCenter.Controllers
             return View(list);
         }
 
-        ///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         bool IsValid(string str) => !String.IsNullOrEmpty(str);
         IEnumerable<Animal> GetAnimals() => data.GetAdoptableAnimals();
         IEnumerable<Animal> SearchAnimals(string searchInput) => search.GetAll(searchInput);

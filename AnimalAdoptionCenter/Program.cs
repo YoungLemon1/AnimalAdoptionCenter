@@ -1,9 +1,6 @@
 global using AnimalAdoptionCenter.Services.Repositories;
 using AnimalAdoptionCenter.Data;
 using Microsoft.EntityFrameworkCore;
-using AnimalAdoptionCenter.Services;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using AnimalAdoptionCenter.Services.GeneralServices.CommentsServices;
 using AnimalAdoptionCenter.Services.GeneralServices.SearchServices;
 
@@ -19,8 +16,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var ctx = scope.ServiceProvider.GetRequiredService<AACContext>();
-    ctx.Database.EnsureDeleted();
-    ctx.Database.EnsureCreated();
+    ctx.Database.Migrate();
 }
 
 app.UseRouting();

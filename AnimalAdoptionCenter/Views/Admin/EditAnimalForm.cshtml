@@ -74,21 +74,21 @@
             <div>
                 <label for="sex">Sex</label>
                 <select id="sex" required asp-for="Sex"
-                        asp-items="Html.GetEnumSelectList<eSex>()">
+                        asp-items="Html.GetEnumSelectList<ESex>()">
                     <option hidden selected value=""></option>
                 </select>
             </div>
             <div>
                 <label for="size">Size</label>
                 <select id="size" required asp-for="Size"
-                        asp-items="Html.GetEnumSelectList<eSize>()">
+                        asp-items="Html.GetEnumSelectList<ESize>()">
                     <option hidden selected value=""></option>
                 </select>
             </div>
             <div>
                 <label for="status">Status</label>
                 <select id="status" required asp-for="Status"
-                        asp-items="Html.GetEnumSelectList<eStatus>()">
+                        asp-items="Html.GetEnumSelectList<EStatus>()">
                     <option hidden selected value=""></option>
                 </select>
             </div>

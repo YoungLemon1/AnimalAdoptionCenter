@@ -2,7 +2,7 @@
 
 namespace AnimalAdoptionCenter.Models.Enums
 {
-    public enum eStatus
+    public enum EStatus
     {
         [Display(Name = "In rehab")]
         In_Rehab,

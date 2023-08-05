@@ -2,7 +2,7 @@
 
 namespace AnimalAdoptionCenter.Models.Enums
 {
-    public enum eSex
+    public enum ESex
     {
         [Display(Name = "Male")]
         Male,

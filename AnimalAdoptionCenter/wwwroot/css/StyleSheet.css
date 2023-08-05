@@ -129,10 +129,6 @@ textarea {
     align-self: start;
 }
 
-hr {
-    margin: 0px;
-}
-
 #description-label {
     text-align: left;
     margin-bottom: 8px;
@@ -241,7 +237,6 @@ form input, select{
     width: 230px;
     height: 230px;
     color: dimgrey;
-
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
@@ -257,6 +252,11 @@ figcaption {
     display: inline-block;
 }
 
+.main-content-wrapper hr {
+    margin: 0px;
+}
+
+
 .category-img {
     display: flex;
     flex-wrap: wrap;
@@ -270,8 +270,4 @@ figcaption {
 
 .about-us {
     margin: 10px;
-}
-
-#about-us {
-    background-color: lightblue;
 }

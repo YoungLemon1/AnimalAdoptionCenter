@@ -2,7 +2,7 @@
 
 namespace AnimalAdoptionCenter.Models.Enums
 {
-    public enum eSize
+    public enum ESize
     {
         [Display(Name = "Tiny")]
         Tiny,

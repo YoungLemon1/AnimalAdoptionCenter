@@ -26,7 +26,7 @@ namespace AnimalAdoptionCenter.Services.Repositories
         }
         IEnumerable<Animal> IRepository.GetAdoptableAnimals()
         {
-            return _context.Animals!.Where(a => a.Status == eStatus.Ready_For_Adoption);
+            return _context.Animals!.Where(a => a.Status == EStatus.Ready_For_Adoption);
         }
         IEnumerable<Animal> IRepository.GetPopularAnimals(int num)
         {

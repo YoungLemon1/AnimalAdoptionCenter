@@ -1,6 +1,4 @@
-﻿using AnimalAdoptionCenter.Models;
-using AnimalAdoptionCenter.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace AnimalAdoptionCenter.Controllers
 {
